@@ -1,0 +1,5 @@
+source 'https://rubygems.org'
+
+gemspec path: '../'
+gem 'octopress-ink', path: '../../ink'
+gem 'jekyll-paginate', path: '../../jekyll-paginate'

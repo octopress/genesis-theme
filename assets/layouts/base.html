@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="{% return page.lang || site.lang || 'en' %}">
+<head>
+<title>{% return post.title_text || page.title %}</title>
+{% include theme:head.html | expand_urls %}
+</head>
+<body>
+  <div class="site">
+  {{ content | expand_urls }}
+  {% js_asset_tag %}
+  </div>
+</body>
+</html>

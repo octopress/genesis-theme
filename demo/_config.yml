@@ -1,0 +1,6 @@
+exclude:
+  - Gemfile*
+gems:
+  - octopress-genesis
+url: http://example.com/
+paginate: 1

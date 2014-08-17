@@ -1,0 +1,10 @@
+<meta charset="utf-8">
+{% if site.author %}<meta name="author" content="{{ site.author }}">{% endif %}
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="{{ page.url | canonical_url }}" rel="canonical">
+<meta name='generator' content='{{ octopress.version }}'>
+{% if page.description %}<meta name="description" content="{{ page.description | strip_html }}">{% endif %}
+{% css_asset_tag %}
+{% yield head %}
