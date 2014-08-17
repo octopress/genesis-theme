@@ -6,17 +6,13 @@ TODO: Write a gem description
 
 ## Installation
 
-Add this line to your application's Gemfile:
+To play around:
 
-    gem 'octopress-genesis'
+1. Clone this repository, `git clone git@github.com:octopress/genesis-theme`
+2. Install gems, `bundle install`
+3. Check out the demo `cd demo; bundle exec jekyll build`
 
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install octopress-genesis
+Note: this may not work, it's in active development.
 
 ## Usage
 
