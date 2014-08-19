@@ -3,4 +3,4 @@ exclude:
 gems:
   - octopress-genesis
 url: http://example.com/
-paginate: 1
+paginate: 10

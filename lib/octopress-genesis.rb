@@ -7,6 +7,7 @@ require 'octopress-comment-tag'
 require 'octopress-return-tag'
 require 'octopress-include-tag'
 require 'octopress-content-for'
+require 'octopress-filter-tag'
 
 Octopress::Ink.add_plugin({
   name:          "Octopress Genesis",
