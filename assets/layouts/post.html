@@ -12,15 +12,15 @@ layout: theme:default
     <div class="entry-content">{{ page.content }}</div>
 
     <footer class='entry-footer' role='contentinfo'>
-    <p class="entry-meta">
-      {% yield footer %}
-      {% assign author = page.author || site.author %}
-      {% if author %}
-      Written by {{ author }} &bull;
-      {% endif %}
-      {{ page.date_time_html }}
-      {% if page.categories %} &bull; <span class="categories">{{ page.categories | category_links }}</span>{% endif %}
-    </p>
+      <p class="entry-meta">
+        {% yield footer %}
+        {% assign author = page.author || site.author %}
+        {% if author %}
+        Written by {{ author }} &bull;
+        {% endif %}
+        {{ page.date_time_html }}
+        {% if page.categories %} &bull; <span class="categories">{{ page.categories | category_links }}</span>{% endif %}
+      </p>
     {% include theme:post-nav.html %}
     </footer>
   </article>
