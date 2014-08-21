@@ -1,9 +1,9 @@
 ---
 layout: theme:base
 ---
-{% _ include theme:site/header.html | compact_newlines %}
-{% _ include theme:site/nav.html | compact_newlines %}
+{% include theme:site-header.html | compact_newlines %}
+{% include theme:primary-nav.html | compact_newlines %}
 <div class="main {% return 'with-sidebar' if sidebar %}">
   {{ content }}
 </div>
-{% _ include theme:site/footer.html %}
+{% include theme:site/footer.html %}

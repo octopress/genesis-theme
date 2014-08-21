@@ -9,7 +9,6 @@ TODO:
 - Add stylesheets.
 - Add page layout.
 - Add sections (recent posts).
-- Add primary site navigation.
 - Add system for searching.
 - Add footer navigation.
 
