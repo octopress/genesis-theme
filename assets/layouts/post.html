@@ -6,14 +6,17 @@ layout: theme:default
     <header class="entry-header">
       <h1 class="entry-title">{{ page.title_link }}</h1>
       <div class="entry-meta">{{ page.date_html }}</div>
+      {% yield header %}
     </header>
 
     <div class="entry-content">{{ entry_content }}</div>
 
     <footer class='entry-footer' role='contentinfo'>
     <p class="entry-meta">
-      {% if site.author or page.author %}
-      Written by {{ return site.author || page.author }} &bull;
+      {% yield footer %}
+      {% assign author = page.author || site.author %}
+      {% if author %}
+      Written by {{ author }} &bull;
       {% endif %}
       {{ page.date_time_html }}
       {% if page.categories %} &bull; <span class="categories">{{ page.categories | category_links }}</span>{% endif %}
