@@ -1,4 +1,3 @@
-require 'octopress-genesis/version'
 require 'octopress-ink'
 require 'octopress-linkblog'
 require 'octopress-autoprefixer'
@@ -9,6 +8,9 @@ require 'octopress-return-tag'
 require 'octopress-include-tag'
 require 'octopress-content-for'
 require 'octopress-filter-tag'
+
+require 'octopress-genesis/version'
+require 'octopress-genesis/category-generator'
 
 Octopress::Ink.add_plugin({
   name:          "Octopress Genesis",

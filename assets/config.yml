@@ -1,4 +1,3 @@
-exclude:
-  - Gemfile*
-gems:
-  - octopress-genesis
+category:
+  prefix: Category
+  url:    category

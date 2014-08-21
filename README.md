@@ -3,7 +3,6 @@
 A new theme build on Octopress Ink. 
 
 TODO: 
-- Incorporate category indexes (create a separate plugin).
 - Add support for Javascript embedded comment integration.
 - Add support for social embeds.
 - Add tall site footer design with support for social integration.
