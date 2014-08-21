@@ -1,0 +1,27 @@
+---
+layout: theme:default
+---
+<div class="main-content">
+  <article class="post entry {{ page.class }}" role="article">
+    <header class="entry-header">
+      <h1 class="entry-title">{{ page.title_link }}</h1>
+      <div class="entry-meta">{{ page.date_html }}</div>
+    </header>
+
+    <div class="entry-content">{{ entry_content }}</div>
+
+    <footer class='entry-footer' role='contentinfo'>
+    <p class="entry-meta">
+      {% if site.author or page.author %}
+      Written by {{ return site.author || page.author }} &bull;
+      {% endif %}
+      {{ page.date_time_html }}
+      {% if page.categories %} &bull; <span class="categories">{{ page.categories | category_links }}</span>{% endif %}
+    </p>
+    {% include theme:post-nav.html %}
+    </footer>
+  </article>
+  {% wrap include theme:comments/embed.html if post.comments %}
+  <div class='entry-comments'>{{ yield }}</div>
+  {% endwrap %}
+</div>

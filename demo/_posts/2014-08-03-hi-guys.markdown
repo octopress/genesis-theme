@@ -1,5 +1,5 @@
 ---
-layout: theme:default
+layout: theme:post
 title: "Hi Guys"
 date: 2014-08-03T22:59:25-05:00
 ---
