@@ -1,4 +1,4 @@
-<header role="banner" class="masthead">
-  <h1 class="site-title"><a class="site-title-link" href="{{ site.root }}">{{ theme.header.title}}</a></h1>
+<header role="banner" class="site-header">
+  <h1 class="site-title"><a class="site-title-link" href="{% return site.root || '/' %}">{{ theme.header.title}}</a></h1>
   {% if theme.header.subtitle %}<p class='site-subtitle'>{{ theme.header.subtitle }}</p>{% endif %}
 </header>

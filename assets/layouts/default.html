@@ -1,8 +1,10 @@
 ---
 layout: theme:base
 ---
+<div class="site-info">
 {% include theme:site-header.html | compact_newlines %}
 {% include theme:primary-nav.html | compact_newlines %}
+</div>
 <div class="main {% return 'with-sidebar' if sidebar %}">
   {{ content }}
 </div>

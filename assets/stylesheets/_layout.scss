@@ -1,0 +1,54 @@
+// Global breakpoints
+$tiny: 320px;
+$small: 600px;
+$medium: 750px;
+$large: 900px;
+$x-large: 1020px;
+$max: 1300px;
+
+
+// Item widths
+$main-sidebar-width: 300px;
+
+* { box-sizing: border-box; }
+
+html, body, .site {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.site {
+  position: relative;
+}
+
+.main {
+  transition: transform .2s ease-out;
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  display: table;
+  width: 100%;
+  float: right;
+  border-top: 1px solid transparent;
+}
+
+@include at-least($large) {
+  .main-content, .main-sidebar {
+    display: table-cell;
+    vertical-align: top;
+  }
+
+  .main-sidebar {
+    width: $main-sidebar-width;
+  }
+}
+
+@include at-least($max) {
+  .site {
+    width: $max;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
