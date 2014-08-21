@@ -2,7 +2,17 @@
 
 A new theme build on Octopress Ink. 
 
-TODO: Write a gem description
+TODO: 
+- Incorporate category indexes (create a separate plugin).
+- Add support for Javascript embedded comment integration.
+- Add support for social embeds.
+- Add tall site footer design with support for social integration.
+- Add stylesheets.
+- Add page layout.
+- Add sections (recent posts).
+- Add primary site navigation.
+- Add system for searching.
+- Add footer navigation.
 
 ## Installation
 
