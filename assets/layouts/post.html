@@ -2,14 +2,14 @@
 layout: theme:default
 ---
 <div class="main-content">
-  <article class="post entry {{ page.class }}" role="article">
+  <article class="post entry {{ page.class }} {% return 'linkpost' if entry.linkpost %}" role="article">
     <header class="entry-header">
       <h1 class="entry-title">{{ page.title_link }}</h1>
       <div class="entry-meta">{{ page.date_html }}</div>
       {% yield header %}
     </header>
 
-    <div class="entry-content">{{ entry_content }}</div>
+    <div class="entry-content">{{ page.content }}</div>
 
     <footer class='entry-footer' role='contentinfo'>
     <p class="entry-meta">
