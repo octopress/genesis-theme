@@ -1,22 +1,18 @@
 ---
 layout: theme:default
 ---
-<div class="main-content">
-  <div class="posts-index">
-    {% for post in paginator.posts %}
-      {% include theme:index-post.html %}
-    {% endfor %}
-  </div>
-
-  <nav class="post-index-navigation pagination" role="navigation">
-    {% if paginator.next_page %}
-      <a class="pagination-prev" title="Older posts" href="{{paginator.next_page_path}}">&larr; Older</a>
-    {% endif %}
-    <a class='archive-link' href="/archive">Post Archive</a>
-    {% if paginator.previous_page %}
-      <a class="pagination-next" title="Newer posts" href="{{paginator.previous_page_path}}">Newer &rarr;</a>
-    {% endif %}
-  </nav>
+<div class="posts-index">
+  {% for post in paginator.posts %}
+    {% include theme:index-post.html %}
+  {% endfor %}
 </div>
 
-
+<nav class="post-index-navigation pagination" role="navigation">
+  {% if paginator.next_page %}
+    <a class="pagination-prev" title="Older posts" href="{{paginator.next_page_path}}">&larr; Older</a>
+  {% endif %}
+  <a class='archive-link' href="/archive">Post Archive</a>
+  {% if paginator.previous_page %}
+    <a class="pagination-next" title="Newer posts" href="{{paginator.previous_page_path}}">Newer &rarr;</a>
+  {% endif %}
+</nav>

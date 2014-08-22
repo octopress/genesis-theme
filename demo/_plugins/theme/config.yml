@@ -1,0 +1,15 @@
+# Settings for main header
+header:
+  title: My Octopress Blog
+  subtitle: A clever subtitle (optional)
+ 
+# Links for main navigation
+nav:
+  - { url: '/', title: 'Home' }
+  - { url: '/archive', title: 'Archive' }
+  - { url: '/feed', title: 'RSS' }
+
+# Settings for category index generator
+category:
+  prefix: Category
+  url:    category

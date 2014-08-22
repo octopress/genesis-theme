@@ -11,3 +11,52 @@
   $large-width: $large-width - 1;
   @media (max-width: $large-width) and (min-width: $small-width) { @content; }
 }
+
+@mixin pad-box($v: $v-pad-box, $h: $h-pad-box) {
+  @if $v {
+    @include v-pad-box($v);
+  }
+  @if $h {
+    @include h-pad-box($h);
+  }
+}
+
+@mixin invert-h-pad($h: $h-pad-box) {
+  margin: {
+    left: - nth($h, 1);
+    right: - nth($h, 1);
+  }
+  @include at-least($medium) {
+    margin: {
+      left: - nth($h, 2);
+      right: - nth($h, 2);
+    }
+  }
+}
+
+@mixin v-pad-box($v: $v-pad-box) {
+  padding: {
+    top: nth($v, 1);
+    bottom: nth($v, 1);
+  }
+  @include at-least($medium) {
+    padding: {
+      top: nth($v, 2);
+      bottom: nth($v, 2);
+    }
+  }
+}
+
+@mixin h-pad-box($h: $h-pad-box) {
+  padding: {
+    left: nth($h, 1);
+    right: nth($h, 1);
+  }
+  @include at-least($medium) {
+    padding: {
+      left: nth($h, 2);
+      right: nth($h, 2);
+    }
+  }
+}
+

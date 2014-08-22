@@ -1,30 +1,28 @@
 ---
 layout: theme:default
 ---
-<div class="main-content">
-  <article class="post entry {{ page.class }} {% return 'linkpost' if entry.linkpost %}" role="article">
-    <header class="entry-header">
-      <h1 class="entry-title">{{ page.title_link }}</h1>
-      <div class="entry-meta">{{ page.date_html }}</div>
-      {% yield header %}
-    </header>
+<article class="post entry {{ page.class }} {% return 'linkpost' if entry.linkpost %}" role="article">
+  <header class="entry-header">
+    <h1 class="entry-title">{{ page.title_link }}</h1>
+    <div class="entry-meta">{{ page.date_html }}</div>
+    {% yield header %}
+  </header>
 
-    <div class="entry-content">{{ page.content }}</div>
+  <div class="entry-content">{{ page.content }}</div>
 
-    <footer class='entry-footer' role='contentinfo'>
-      <p class="entry-meta">
-        {% yield footer %}
-        {% assign author = page.author || site.author %}
-        {% if author %}
-        Written by {{ author }} &bull;
-        {% endif %}
-        {{ page.date_time_html }}
-        {% if page.categories %} &bull; <span class="categories">{{ page.categories | category_links }}</span>{% endif %}
-      </p>
-    {% include theme:post-nav.html %}
-    </footer>
-  </article>
-  {% wrap include theme:comments/embed.html if post.comments %}
-  <div class='entry-comments'>{{ yield }}</div>
-  {% endwrap %}
-</div>
+  <footer class='entry-footer' role='contentinfo'>
+    <p class="entry-meta">
+      {% yield footer %}
+      {% assign author = page.author || site.author %}
+      {% if author %}
+      Written by {{ author }} &bull;
+      {% endif %}
+      {{ page.date_time_html }}
+      {% if page.categories %} &bull; <span class="categories">{{ page.categories | category_links }}</span>{% endif %}
+    </p>
+  {% include theme:post-nav.html %}
+  </footer>
+</article>
+{% wrap include theme:comments/embed.html if post.comments %}
+<div class='entry-comments'>{{ yield }}</div>
+{% endwrap %}
