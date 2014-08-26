@@ -1,8 +1,10 @@
-{% assign post_content = (theme.index.excerpt_posts ? post.excerpt : post.content) %}
+{% assign post_content = (theme.post_index.excerpt_posts ? post.excerpt : post.content) %}
 {% assign excerpted = true if post_content != post.content %}
-{% assign permalink_label = (excerpted ? theme.index.excerpt_label : theme.index.permalink_label) %}
+{% assign classnames = post.class | join: " " | classify if post.class %}
+{% assign classnames += " excerpt" if excerpted %}
+{% assign permalink_label = (excerpted ? theme.post_index.read_more_label : theme.post_index.permalink_label) %}
 
-<article class="entry {% return post.class | join: " " | classify if post.class %}" role="article">
+<article class="entry {{ classnames }}" role="article">
   <header class="entry-header">
     <h1 class="entry-title">{{ post.title_link }}</h1>
     <div class="entry-meta">{{ post.date_time_html }}</div>

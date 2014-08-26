@@ -1,0 +1,153 @@
+/* ==========================================================================
+ * Grid core - Based on Griddle, Heavily customized.
+ * ========================================================================== */
+
+@mixin destroy-margins {
+  @include destroy-top-margins;
+  @include destroy-bottom-margins;
+}
+
+@mixin destroy-top-margins {
+  > :first-child,
+  > :first-child > :first-child,
+  > :first-child > :first-child > :first-child { margin-top: 0; }
+}
+
+@mixin destroy-bottom-margins {
+  > :last-child,
+  > :last-child > :last-child,
+  > :last-child > :last-child > :last-child { margin-bottom: 0; }
+}
+
+// Remove inner elements' top and bottom margin
+%destroy-margins {
+  @include destroy-margins;
+}
+
+
+$grid-gutter: 4%;
+$margin: 30px;
+
+$grid-gutter-none: 0;
+$grid-gutter-small: 2%;
+$grid-gutter-large: 8%;
+
+.grid {
+  display: block;
+  padding: 0;
+  $m:  -.5 * $grid-gutter;
+  margin: { left: $m; right: $m; }
+  letter-spacing: -5px;
+  text-rendering: optimizespeed;
+
+  // Nested `grid` object adjustments
+  > .grid {
+    overflow: hidden;
+    margin-right: 0;
+    margin-left: 0;
+  }
+
+  /* ==========================================================================
+   * Gutter sizing
+   * ========================================================================== */
+
+  // No gutter (0%)
+  &.no-gutter {
+    $m:  -.5 * $grid-gutter-none;
+    margin: { left: $m; right: $m; }
+    > .grid-cell {
+      padding: 0 0.5 * $grid-gutter-none;
+    }
+
+    &.match-gutters {
+      > .grid-cell {
+        padding: 0;
+        margin: { left: 0; right: 0; }
+      }
+    }
+  }
+
+  // Small gutter (2%)
+  &.small-gutter {
+    $m:  -.5 * $grid-gutter-small;
+    margin: { left: $m; right: $m; }
+    > .grid-cell {
+      padding: 0 0.5 * $grid-gutter-small;
+    }
+
+    &.match-gutters {
+      > .grid-cell {
+        padding: 0 0.5 * $grid-gutter-small;
+        margin: { bottom: $grid-gutter-small; }
+      }
+    }
+  }
+
+  // Large gutter (8%)
+  &.large-gutter {
+    $m:  -.5 * $grid-gutter-large;
+    margin: { left: $m; right: $m; }
+    > .grid-cell {
+      padding: 0 0.5 * $grid-gutter-large;
+    }
+
+    &.match-gutters {
+      > .grid-cell {
+        padding: 0 0.5 * $grid-gutter-large;
+        margin: { bottom: $grid-gutter-large; }
+      }
+    }
+  }
+
+
+  /* ==========================================================================
+   * Adhere to set gutter spacing & ignore inner elements' margin
+   * ========================================================================== */
+
+  &.match-gutters  {
+    > .grid-cell {
+      padding: 0.5 * $grid-gutter;
+      @extend %destroy-margins;
+    }
+  }
+}
+
+
+// Grid cells - Apply `.x-of-x` classes to set width.
+.grid-cell {
+  display: inline-block;
+  width: 100%;
+  margin: 0;
+  padding: 0 .5 * $grid-gutter;
+  text-align: left;
+  vertical-align: top;
+  letter-spacing: normal;
+  word-spacing: normal;
+  text-rendering: auto;
+  &.auto {
+    width: auto;
+  }
+}
+
+/* =====================================================================
+ * Cell sizing
+ * ===================================================================== */
+
+$cell-sizes: (1:one, 2:two, 3:three, 4:four, 5:five, 6:six);
+
+@mixin grid-cell($num) {
+  @for $i from 1 to $num {
+    .#{map-get($cell-sizes, $i)}-of-#{map-get($cell-sizes, $num)} {
+      width: 100%*$i/$num; 
+    }
+  }
+}
+
+@include grid-cell(6);
+@include grid-cell(5);
+@include grid-cell(4);
+@include grid-cell(3);
+@include grid-cell(2);
+.small-golden { width: 38.2%; }
+.large-golden { width: 61.8%; }
+

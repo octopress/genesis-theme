@@ -1,11 +1,11 @@
 ---
 layout: theme:default
 ---
-<div class="posts-index">
+<div class="post-index">
   {% for post in site.posts limit: 10 %}
     {% include theme:index-post.html %}
   {% endfor %}
 </div>
-<nav class="post-index-navigation" role="navigation">
+<nav class="post-index-nav" role="navigation">
   <a class='archive-link' href="{{ theme.permalinks.archive }}">Post Archive</a>
 </nav>

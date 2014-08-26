@@ -1,13 +1,28 @@
 html {
-  background: $site-bg;
   color: $site-text-color;
-  @include at-least($max) {
-    background: $main-bg;
-  }
+  background: $main-bg;
 }
 
-.site-top, .site-bottom {
-  background: $site-bg;
+.site-top-content {
+  border-bottom: 1px solid #aaa;
+  text-align: center;
+}
+
+.site-bottom-content {
+  text-align: center;
+}
+
+.entry-header {
+  text-align: center;
+}
+
+.entry-content {
+  margin: { top: 3em; bottom: 3em; }
+}
+
+.entry-content > *:not(.full-width), .entry-footer {
+  max-width: 40em;
+  margin: { left: auto; right: auto; }
 }
 
 a {

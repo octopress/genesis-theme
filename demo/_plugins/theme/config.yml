@@ -5,7 +5,7 @@ header:
  
 # Links for main navigation
 nav:
-  - { url: '/', title: 'Home' }
+  - { url: '/', title: 'Posts' }
   - { url: '/archive', title: 'Archive' }
   - { url: '/feed', title: 'RSS' }
 
@@ -13,3 +13,6 @@ nav:
 category:
   prefix: Category
   url:    category
+
+post_index:
+  excerpt_posts: false

@@ -1,0 +1,44 @@
+// Post index navigation
+
+.post-index-nav {
+  text-align: center;
+  border-top: 1px solid #aaa;
+  border-bottom: 1px solid #aaa;
+  overflow: hidden;
+  padding: { top: .65em; bottom: .65em; }
+}
+
+// Post page navigation
+$accent-color: #e46767;
+$light-text-color:   #888;
+$post-title-font-stack: Georgia, Times, 'Times New Roman', serif;
+.post-nav {
+  border-top: 1px solid #aaa;
+  border-bottom: 1px solid #aaa;
+  overflow: hidden;
+}
+
+.next-post     { float: right; padding-right: 1em; }
+.previous-post { float: left;  padding-left: 1em; }
+
+.next-post, .previous-post {
+  text-decoration: none;
+  color: inherit;
+  padding: { top: .65em; bottom: .65em; }
+}
+
+.previous-post-marker, .next-post-marker {
+  color: $accent-color;
+  font-size: .8em;
+}
+
+.previous-post-title, .next-post-title {
+  font-family: $post-title-font-stack;
+  font-weight: bold;
+  margin: .5em 0;
+}
+
+.previous-post-date, .next-post-date {
+  color: $light-text-color;
+  font-size: .8em;
+}

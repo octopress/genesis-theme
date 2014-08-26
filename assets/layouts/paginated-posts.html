@@ -1,13 +1,13 @@
 ---
 layout: theme:default
 ---
-<div class="posts-index">
+<div class="post-index">
   {% for post in paginator.posts %}
     {% include theme:index-post.html %}
   {% endfor %}
 </div>
 
-<nav class="post-index-navigation pagination" role="navigation">
+<nav class="post-index-nav pagination" role="navigation">
   {% if paginator.next_page %}
     <a class="pagination-prev" title="Older posts" href="{{paginator.next_page_path}}">&larr; Older</a>
   {% endif %}

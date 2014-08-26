@@ -13,3 +13,8 @@ nav:
 category:
   prefix: Category
   url:    category
+
+post_index:
+  excerpt_posts: true
+  permalink_label: "Permalink"
+  read_more_label: "Continue Reading &rarr;"

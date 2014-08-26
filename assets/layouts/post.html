@@ -3,12 +3,13 @@ layout: theme:default
 ---
 <article class="post entry {{ page.class }} {% return 'linkpost' if entry.linkpost %}" role="article">
   <header class="entry-header">
-    <h1 class="entry-title">{{ page.title_link }}</h1>
+    {% assign title = (page.linkpost ? page.title_link : page.title_html) %}
+    <h1 class="entry-title">{{ title }}</h1>
     <div class="entry-meta">{{ page.date_html }}</div>
     {% yield header %}
   </header>
 
-  <div class="entry-content">{{ page.content }}</div>
+  <div class="entry-content">{{ content }}</div>
 
   <footer class='entry-footer' role='contentinfo'>
     <p class="entry-meta">
@@ -20,9 +21,9 @@ layout: theme:default
       {{ page.date_time_html }}
       {% if page.categories %} &bull; <span class="categories">{{ page.categories | category_links }}</span>{% endif %}
     </p>
-  {% include theme:post-nav.html %}
   </footer>
 </article>
+{% include theme:post-nav.html %}
 {% wrap include theme:comments/embed.html if post.comments %}
 <div class='entry-comments'>{{ yield }}</div>
 {% endwrap %}

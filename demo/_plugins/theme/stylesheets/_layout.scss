@@ -9,6 +9,7 @@ html, body, .site {
 
 .site {
   position: relative;
+  @include pad-box;
 }
 
 .site-content {
@@ -32,14 +33,10 @@ html, body, .site {
   z-index: 1;
   height: 100%;
   display: table;
+  table-layout: fixed;
   width: 100%;
   float: right;
   border-top: 1px solid transparent;
-}
-
-.site-header, .site-nav, .main-content,
-.site-footer {
-  @include pad-box;
 }
 
 @include at-least($large) {
