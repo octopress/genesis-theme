@@ -1,0 +1,27 @@
+.entry {
+  margin: { top: 4em; bottom: 4em; }
+  + .entry {
+    border-top: 1px solid $page-border;
+    padding-top: 2em;
+  }
+}
+
+.article-link {
+  text-decoration: none;
+  color: inherit;
+  &:hover {
+    color: $link-color;
+  }
+}
+
+.entry-header {
+  text-align: center;
+}
+
+.entry-content {
+  margin: { top: 3rem; bottom: 3rem; }
+}
+
+.entry {
+  margin: { left: auto; right: auto; }
+}

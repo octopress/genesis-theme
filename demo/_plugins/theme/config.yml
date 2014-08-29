@@ -1,7 +1,6 @@
 # Settings for main header
 header:
   title: My Octopress Blog
-  subtitle: A clever subtitle (optional)
  
 # Links for main navigation
 nav:
@@ -15,4 +14,4 @@ category:
   url:    category
 
 post_index:
-  excerpt_posts: false
+  excerpt_posts: true

@@ -4,14 +4,12 @@ layout: theme:default
 <article class="page entry {{ page.class }}" role="article">
   <header class="entry-header">
     <h1 class="entry-title">{{ page.title_html }}</h1>
-    {% yield header %}
+    {{ page.date_html }}
+    {% include theme:social/page-header.html %}
   </header>
 
   <div class="entry-content">{{ content }}</div>
 
-  <footer class='entry-footer' role='contentinfo'>
-    <div class="entry-meta">{{ page.date_html }}</div>
-  </footer>
 </article>
 {% wrap include theme:comments/embed.html if page.comments %}
 <div class='entry-comments'>{{ yield }}</div>

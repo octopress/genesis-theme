@@ -7,18 +7,14 @@ html, body, .site {
   margin: 0;
 }
 
-.site {
-  position: relative;
-}
-
 .site-content {
   width: 100%;
-  height: 100%;
+  min-height: 100%;
   display: table;
   table-layout: fixed;
 }
 
-.site-main, .site-top, .site-bottom {
+.site-top, .site-main, .site-bottom {
   display: table-row;
 }
 
@@ -32,14 +28,14 @@ html, body, .site {
   z-index: 1;
   height: 100%;
   display: table;
+  table-layout: fixed;
   width: 100%;
   float: right;
   border-top: 1px solid transparent;
 }
 
-.site-header, .site-nav, .main-content,
-.site-footer {
-  @include pad-box;
+.main-content {
+  padding-bottom: 3rem;
 }
 
 @include at-least($large) {
@@ -55,9 +51,17 @@ html, body, .site {
 
 @include at-least($max) {
   .site {
-    width: $max;
     margin-left: auto;
     margin-right: auto;
   }
+}
+
+.entry-content, 
+.post-nav,
+.entry-footer {
+  max-width: $main-content-max;
+  padding-left: $content-pad;
+  padding-right: $content-pad;
+  margin: 0 auto;
 }
 

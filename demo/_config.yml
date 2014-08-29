@@ -4,3 +4,4 @@ gems:
   - octopress-genesis
 url: http://example.com/
 paginate: 10
+markdown: redcarpet

@@ -6,6 +6,7 @@ layout: theme:default
     {% assign title = (page.linkpost ? page.title_link : page.title_html) %}
     <h1 class="entry-title">{{ title }}</h1>
     <div class="entry-meta">{{ page.date_html }}</div>
+    {% include theme:social/post-header.html %}
     {% yield header %}
   </header>
 
@@ -16,10 +17,13 @@ layout: theme:default
       {% yield footer %}
       {% assign author = page.author || site.author %}
       {% if author %}
-      Written by {{ author }} &bull;
+        <div class='author-credit'>Written by: {{ author }}</div>
       {% endif %}
-      {{ page.date_time_html }}
-      {% if page.categories %} &bull; <span class="categories">{{ page.categories | category_links }}</span>{% endif %}
+      <div class='posted-date'>Published: {{ page.date_time_html }}</div>
+      {% if page.categories %} 
+        <div class="categories">Categories: {{ page.categories | category_links }}</div>
+      {% endif %}
+      {% include theme:social/post-footer.html %}
     </p>
   </footer>
 </article>

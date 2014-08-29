@@ -1,19 +1,27 @@
 html {
-  background: $site-bg;
   color: $site-text-color;
-  @include at-least($max) {
-    background: $main-bg;
-  }
-}
-
-.site-top, .site-bottom {
-  background: $site-bg;
+  background: $main-bg;
 }
 
 a {
   color: $link-color;
 }
 
-.main {
-  background: $main-bg;
+.site-top-content,
+.site-bottom-content {
+  text-align: center;
+}
+
+.site-bottom-content {
+  border-top: 1px solid $page-border;
+}
+
+.full-width {
+  @supports(width:100vw) {
+    width: 100vw;
+    transform: translateX(-#{$content-pad});
+    @include at-least($main-content-max) {
+      transform: translateX(calc((#{$main-content-max - ($content-pad * 2)} - 100vw)/2));
+    }
+  }
 }

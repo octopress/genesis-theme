@@ -22,3 +22,4 @@ tmp
 mkmf.log
 _site
 .sass-cache
+.DS_Store

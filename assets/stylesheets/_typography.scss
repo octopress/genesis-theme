@@ -1,0 +1,63 @@
+body {
+  font-family: $body-font;
+  font-size: 18px;
+  line-height: 1.65em;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  line-height: normal;
+  margin: .83em 0;
+}
+
+h1 {
+  font-size: 2.8em;
+}
+
+h2 {
+  font-size: 2em;
+}
+
+h3 {
+  font-size: 1.6em;
+}
+
+h4 {
+  font-size: 1.3em;
+}
+
+h5 {
+  font-size: 1.2em;
+}
+
+h6 {
+  font-size: 1em;
+}
+
+p, ul, ol, dl, table, figure, blockquote {
+  margin: { top: 1.65em; bottom: 1.65em; }
+}
+
+figure {
+  margin: {left: 0; right: 0;}
+}
+
+img {
+  max-width: 100%;
+}
+
+.float-right { 
+  float: right; 
+  margin: { top: 1.1em; left: 1.1em; bottom: 1.1em; }
+}
+.float-left  { 
+  float: left; 
+  margin: { top: 1.1em; right: 1.1em; bottom: 1.1em; }
+}
+
+.align-left   { text-align: left; }
+.align-center { text-align: center; }
+.align-left   { text-align: left; }
+
+.align-top    { vertical-align: top; }
+.align-middle { vertical-align: middle; }
+.align-bottom { vertical-align: bottom; }
