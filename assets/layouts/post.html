@@ -1,12 +1,17 @@
 ---
 layout: theme:default
 ---
-<article class="post entry {{ page.class }} {% return 'linkpost' if entry.linkpost %}" role="article">
-  <header class="entry-header">
+<article class="post entry {{ page.class }} {% return 'graphic-title' if page.title-graphic %} {% return 'linkpost' if entry.linkpost %}" role="article">
+  {% if page.title-graphic %}
+    <header class="entry-header" style='background-image: url("{{ page.title-graphic }}")'>
+  {% else %}
+    <header class="entry-header">
+  {% endif %}
     {% assign title = (page.linkpost ? page.title_link : page.title_html) %}
     <h1 class="entry-title">{{ title }}</h1>
+    {% if page.subtitle %}<p class="entry-subtitle">{{ page.subtitle }}</p>{% endif %}
     <div class="entry-meta">{{ page.date_html }}</div>
-    {% include theme:social/post-header.html %}
+    <div class="entry-social header">{% include theme:social/post-header.html %}</div>
     {% yield header %}
   </header>
 
@@ -23,8 +28,8 @@ layout: theme:default
       {% if page.categories %} 
         <div class="categories">Categories: {{ page.categories | category_links }}</div>
       {% endif %}
-      {% include theme:social/post-footer.html %}
     </p>
+    <div class="entry-social footer">{% include theme:social/post-footer.html %}</div>
   </footer>
 </article>
 {% include theme:post-nav.html %}

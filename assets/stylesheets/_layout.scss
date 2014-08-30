@@ -56,12 +56,16 @@ html, body, .site {
   }
 }
 
+.entry-title,
+.entry-meta,
+.entry-subtitle,
+.entry-social,
 .entry-content, 
 .post-nav,
 .entry-footer {
   max-width: $main-content-max;
   padding-left: $content-pad;
   padding-right: $content-pad;
-  margin: 0 auto;
+  margin: { left: auto; right: auto; }
 }
 

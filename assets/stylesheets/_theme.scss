@@ -1,5 +1,5 @@
 html {
-  color: $site-text-color;
+  color: $text-color;
   background: $main-bg;
 }
 
@@ -18,10 +18,11 @@ a {
 
 .full-width {
   @supports(width:100vw) {
-    width: 100vw;
+    width: 101vw;
     transform: translateX(-#{$content-pad});
     @include at-least($main-content-max) {
-      transform: translateX(calc((#{$main-content-max - ($content-pad * 2)} - 100vw)/2));
+      $w: $main-content-max - ($content-pad * 2);
+      transform: translateX(calc((#{$w} - 101vw)/2));
     }
   }
 }
