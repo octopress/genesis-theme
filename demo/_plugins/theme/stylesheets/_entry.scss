@@ -15,7 +15,9 @@
 }
 
 .entry-header {
-  /*text-align: center;*/
+  @if ($center-headings) {
+    text-align: center;
+  }
 }
 
 .entry-title {

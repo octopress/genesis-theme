@@ -1,6 +1,11 @@
+$post-title-font-stack: "Source Serif Pro", Georgia, Times, 'Times New Roman', serif;
+
+html {
+  font-size: $base-font-size;
+}
+
 body {
-  font-family: $body-font;
-  font-size: 18px;
+  font-family: "Source Serif Pro", Georgia, Times, 'Times New Roman', serif;
   line-height: 1.65em;
 }
 
@@ -10,7 +15,7 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 h1 {
-  font-size: 1.3rem;
+  font-size: 2.8rem;
 }
 
 h2 {
@@ -34,7 +39,7 @@ h6 {
 }
 
 p, ul, ol, dl, table, figure, blockquote {
-  margin: { top: 1.65em; bottom: 1.65em; }
+  margin: { top: 1.45rem; bottom: 1.45rem; }
 }
 
 figure {
@@ -43,6 +48,16 @@ figure {
 
 img {
   max-width: 100%;
+}
+
+blockquote {
+  border-left: 5px solid $page-border;
+  margin-left: 0;
+  padding: 1px .5rem 1px 2rem;
+  color: $medium-text-color;
+  p {
+    margin: .8rem 0;
+  }
 }
 
 .float-right { 
@@ -61,3 +76,15 @@ img {
 .align-top    { vertical-align: top; }
 .align-middle { vertical-align: middle; }
 .align-bottom { vertical-align: bottom; }
+
+hr {
+  border: none;
+  background: none;
+  width: 100%;
+  border-bottom: 1px solid $page-border;
+  &.dark {
+    border-bottom: 1px solid $gray;
+  }
+  &.thick {
+  }
+}

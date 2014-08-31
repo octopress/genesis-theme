@@ -15,3 +15,5 @@ category:
 
 post_index:
   excerpt_posts: true
+
+center-headings: true

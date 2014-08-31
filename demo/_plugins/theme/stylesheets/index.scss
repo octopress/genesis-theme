@@ -1,3 +1,8 @@
+// Theme settings
+
+$center-headings: {{ theme.center-headings }};
+
+// Stylesheets
 @import "colors";
 @import "sizes";
 @import "mixins";

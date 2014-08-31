@@ -15,7 +15,21 @@
 }
 
 .entry-header {
-  text-align: center;
+  @if ($center-headings) {
+    text-align: center;
+  }
+}
+
+.entry-title {
+  margin-bottom: 0;
+  font-size: 2.4rem;
+  @include at-least($medium) {
+    font-size: 2.8rem;
+  }
+}
+
+.entry-meta {
+  color: $medium-text-color;
 }
 
 .entry-content {
@@ -24,4 +38,48 @@
 
 .entry {
   margin: { left: auto; right: auto; }
+}
+
+.entry-meta, .entry-subtitle, .entry-footer {
+  font-family: $meta-font;
+  font-weight: 400;
+  font-size: .9rem;
+}
+
+.entry-header > * {
+  position: relative;
+  z-index: 1;
+}
+.entry-subtitle {
+  font-size: 1.4rem;
+  margin-top: 0;
+}
+
+.graphic-title {
+  margin-top: 0;
+  .entry-header {
+    background-size: cover;
+    background-position: center center;
+    padding: { top: 10%; bottom: 10%; }
+  }
+
+  &.light-title {
+    .entry-header, .entry-meta {
+      color: #fff;
+      text-shadow: rgba(#000, .5) 0 1px 1px;
+    }
+    .entry-header {
+      position: relative;
+      &:after {
+        content: "";
+        position: absolute;
+        z-index: 0;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        background: rgba(#000, .08);
+      }
+    }
+  }
 }

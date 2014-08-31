@@ -18,3 +18,5 @@ post_index:
   excerpt_posts: true
   permalink_label: "Permalink"
   read_more_label: "Continue Reading &rarr;"
+
+center-headings: true
