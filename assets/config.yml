@@ -9,15 +9,30 @@ nav:
   - { url: '/archive', title: 'Archive' }
   - { url: '/feed', title: 'RSS' }
 
-# Settings for category index generator
+# Settings for category generator
 category:
-  prefix: Category
-  url:    category
+  title:  Category
+  slug:   ''
+
+  # To add per category feeds, use an array of category names you want feeds for.
+  # for example:
+  # feeds:
+  #   - news
+  #   - programming
+  feeds:
+    - guys
 
 post_index:
-  excerpt_posts: true
+  excerpt_articles: true
   permalink_label: "Permalink"
   read_more_label: "Continue Reading &rarr;"
 
-center-headings: true
+feeds:
+  count: 10
+  main_feed: true
+  linkpost_feed: true
+  article_feed: true
+  excerpt_articles: false
+
+center_headings: true
 search: google

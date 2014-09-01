@@ -1,0 +1,8 @@
+{% assign last_post = site.categories[page.category].last %}
+{% include theme:feed/head.xml last_post=last_post %}
+{% for post in site.categories[page.category] limit:theme.feeds.count %}
+<entry>
+{% include theme:feed/entry.xml %}
+</entry>
+{% endfor %}
+</feed>

@@ -1,0 +1,12 @@
+---
+permalink: /feed/
+title: Main Feed
+feed: posts
+---
+{% include theme:feed/head.xml last_post = site.posts.last %}
+{% for post in site.posts limit:theme.feeds.count %}
+  <entry>
+    {% include theme:feed/entry.xml %}
+  </entry>
+{% endfor %}
+</feed>

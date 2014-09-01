@@ -23,6 +23,7 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency "octopress-date-format", "~> 2.0"
   spec.add_runtime_dependency "octopress-autoprefixer", "~> 1.0"
   spec.add_runtime_dependency "octopress-wrap-tag", "~> 1.0"
+  spec.add_runtime_dependency "octopress-abort-tag", "~> 1.0"
   spec.add_runtime_dependency "octopress-assign-tag", "~> 1.0"
   spec.add_runtime_dependency "octopress-filter-tag", "~> 1.0"
   spec.add_runtime_dependency "octopress-comment-tag", "~> 1.0"

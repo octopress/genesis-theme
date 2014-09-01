@@ -41,14 +41,33 @@ module Jekyll
       self.data                = layout.data
       self.data['category']    = category
       # Set the title for this page.
-      prefix                   = 'Category'
-      self.data['title']       = "#{@config['prefix']}: #{category}"
+      self.data['title']       = "#{@config['title']}: #{category}"
       # Set the meta-description for this page.
-      self.data['description'] = "#{prefix}: #{category}"
+      self.data['description'] = "#{@config['title']}: #{category}"
     end
 
   end
 
+  # The CategoryFeed class creates an Atom feed for the specified category.
+  class CategoryFeed < CategoryIndex
+
+    # Initializes a new CategoryFeed.
+    #
+    #  +base+         is the String path to the <source>.
+    #  +category_dir+ is the String path between <source> and the category folder.
+    #  +category+     is the category currently being processed.
+    def initialize(site, base, category_dir, category)
+      super
+      @name = 'index.xml'
+      self.process(@name)
+      layout = @site.layouts['theme:category-feed']
+      self.content             = layout.content
+      self.data                = layout.data
+      self.data['category']    = category
+    end
+
+  end
+  
   # The Site class is a built-in Jekyll class with access to global site config information.
   class Site
 
@@ -66,29 +85,28 @@ module Jekyll
 
     end
 
+    # write 
+    def write_category_feed(category_dir, category)
+      # Create an Atom-feed for each index.
+      feed = CategoryFeed.new(self, self.source, File.join(category_dir,'feed'), category)
+      feed.render(self.layouts, site_payload)
+      feed.write(self.dest)
+      # Record the fact that this page has been added, otherwise Site::cleanup will remove it.
+      self.pages << feed
+    end
+
     # Loops through the list of category pages and processes each one.
     def write_category_indexes
       if self.layouts.key? 'theme:category-index'
         config = Octopress::Ink::Plugins.config['theme']['category']
-        url = config['url']
+        slug = config['slug']
+        feeds = config['feeds']
         self.categories.keys.each do |category|
-          self.write_category_index(File.join(url, category), category) if url
+          self.write_category_index(File.join(slug, category), category) if slug
+          self.write_category_feed(File.join(slug, category), category) if feeds && feeds.include?(category)
         end
-
-      # Throw an exception if the layout couldn't be found.
-      else
-        raise <<-ERR
-
-
-===============================================
- Error for category_generator.rb plugin
------------------------------------------------
- No 'category_index.html' in source/_layouts/
- Perhaps you haven't installed a theme yet.
-===============================================
-
-ERR
       end
+
     end
 
   end
@@ -138,8 +156,10 @@ ERR
     def category_link(category)
       dir = @context.registers[:site].config['category_dir']
       # TODO: URLize categories
-      url = File.join('/', Octopress::Ink::Plugins.config['theme']['category']['url'], sluggify(category))
-      "<a class='category' href='#{url}/'>#{category}</a>"
+      slug = File.join('/',
+                       Octopress::Ink::Plugins.config['theme']['category']['slug'],
+                       sluggify(category))
+      "<a class='category' href='#{slug}/'>#{category}</a>"
     end
 
     # returns a string which is ready for urlizing.

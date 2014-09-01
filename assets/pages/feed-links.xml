@@ -1,0 +1,14 @@
+---
+permalink: /feed/links/
+title: Linkpost Feed
+feed: linkposts
+---
+{% if theme.feeds.linkpost_feed %}
+{% include theme:feed/head.xml last_post=site.linkposts.last %}
+{% for post in site.linkposts limit:theme.feeds.count %}
+  <entry>
+    {% include theme:feed/entry.xml %}
+  </entry>
+{% endfor %}
+</feed>
+{% else %}{% abort %}{% endif %}

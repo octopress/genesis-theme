@@ -1,8 +1,8 @@
-{% assign post_content = (theme.post_index.excerpt_posts ? post.excerpt : post.content) %}
+{% assign post_content = (theme.post-index.excerpt-articles ? post.excerpt : post.content) %}
 {% assign excerpted = true if post_content != post.content %}
 {% assign classnames = post.class | join: " " | classify if post.class %}
 {% assign classnames += " excerpt" if excerpted %}
-{% assign permalink_label = (excerpted ? theme.post_index.read_more_label : theme.post_index.permalink_label) %}
+{% assign permalink_label = (excerpted ? theme.post-index.read_more_label : theme.post-index.permalink-label) %}
 
 <article class="entry {{ classnames }}" role="article">
   <header class="entry-header">
