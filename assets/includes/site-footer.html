@@ -9,4 +9,6 @@
     {% endfor %}
   </nav>
   {% endif %}
+  {% capture search_template %}theme:search/{{ theme.search }}.html{% endcapture %}
+  {% include search_template %}
 </footer>

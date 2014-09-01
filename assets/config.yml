@@ -20,3 +20,4 @@ post_index:
   read_more_label: "Continue Reading &rarr;"
 
 center-headings: true
+search: google
