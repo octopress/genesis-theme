@@ -99,7 +99,7 @@ module Jekyll
     def write_category_indexes
       if self.layouts.key? 'theme:category-index'
         config = Octopress::Ink::Plugins.config['theme']['category']
-        slug = config['slug']
+        slug = config['dir']
         feeds = config['feeds']
         self.categories.keys.each do |category|
           self.write_category_index(File.join(slug, category), category) if slug
@@ -157,7 +157,7 @@ module Jekyll
       dir = @context.registers[:site].config['category_dir']
       # TODO: URLize categories
       slug = File.join('/',
-                       Octopress::Ink::Plugins.config['theme']['category']['slug'],
+                       Octopress::Ink::Plugins.config['theme']['category']['dir'],
                        sluggify(category))
       "<a class='category' href='#{slug}/'>#{category}</a>"
     end

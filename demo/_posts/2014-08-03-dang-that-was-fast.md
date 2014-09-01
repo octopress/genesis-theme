@@ -3,8 +3,8 @@ layout: theme:post
 title: "Dang That Was Fast"
 date: 2014-08-03T23:18:12-05:00
 categories: 
-  - 'hi'
-  - 'guys'
+  - 'test'
+  - 'news'
 title-graphic: /images/panorama.jpg
 class: light-title
 subtitle: But was it? Was it really?

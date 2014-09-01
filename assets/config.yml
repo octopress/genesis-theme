@@ -1,26 +1,28 @@
 # Settings for main header
 header:
   title: My Octopress Blog
-  subtitle: A clever subtitle (optional)
+  subtitle:
  
 # Links for main navigation
 nav:
   - { url: '/', title: 'Home' }
-  - { url: '/archive', title: 'Archive' }
-  - { url: '/feed', title: 'RSS' }
+  - { url: '/archive/', title: 'Archive' }
+  - { url: '/feed/', title: 'RSS' }
 
 # Settings for category generator
 category:
   title:  Category
-  slug:   ''
+  dir:   'categories'
+  feeds: false
+    
+  # The base url for categories
+  # An empty string means categories will live at the root directory.
 
   # To add per category feeds, use an array of category names you want feeds for.
   # for example:
   # feeds:
   #   - news
   #   - programming
-  feeds:
-    - guys
 
 post_index:
   excerpt_articles: true
