@@ -63,23 +63,25 @@
     padding: { top: 10%; bottom: 10%; }
   }
 
-  &.light-title {
-    .entry-header, .entry-meta {
-      color: #fff;
-      text-shadow: rgba(#000, .5) 0 1px 1px;
-    }
-    .entry-header {
-      position: relative;
-      &:after {
-        content: "";
-        position: absolute;
-        z-index: 0;
-        left: 0;
-        top: 0;
-        bottom: 0;
-        right: 0;
-        background: rgba(#000, .08);
-      }
+}
+
+.light-title {
+  .entry-header,
+  .entry-header .entry-meta {
+    color: #fff;
+    text-shadow: rgba(#000, .5) 0 1px 1px;
+  }
+  .entry-header {
+    position: relative;
+    &:after {
+      content: "";
+      position: absolute;
+      z-index: 0;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      background: rgba(#000, .08);
     }
   }
 }

@@ -1,7 +1,7 @@
 ---
 layout: theme:default
 ---
-<article class="post entry {{ page.class }} {% return 'graphic-title' if page.title-graphic %} {% return 'linkpost' if entry.linkpost %}" role="article">
+<article class="post entry {% return 'graphic-title' if page.title-graphic %} {% return 'linkpost' if entry.linkpost %}" role="article">
   {% if page.title-graphic %}
     <header class="entry-header" style='background-image: url("{{ page.title-graphic }}")'>
   {% else %}
@@ -18,17 +18,17 @@ layout: theme:default
   <div class="entry-content">{{ content }}</div>
 
   <footer class='entry-footer' role='contentinfo'>
-    <p class="entry-meta">
+    <div class="entry-meta">
       {% yield footer %}
       {% assign author = page.author || site.author %}
       {% if author %}
-        <div class='author-credit'>Written by: {{ author }}</div>
+        <span class='author-credit'>Written by {{ author }}</span> &mdash; 
       {% endif %}
-      <div class='posted-date'>Published: {{ page.date_time_html }}</div>
-      {% if page.categories %} 
-        <div class="categories">Categories: {{ page.categories | category_links }}</div>
+      <span class='posted-date'>{{ page.date_time_html }}</span>
+      {% if page.categories.size > 0 %} 
+        &mdash; <span class="categories">{{ page.categories | category_links }}</span>
       {% endif %}
-    </p>
+    </div>
     <div class="entry-social footer">{% include theme:social/post-footer.html %}</div>
   </footer>
 </article>

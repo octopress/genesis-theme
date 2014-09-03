@@ -24,4 +24,3 @@ Octopress::Ink.add_plugin({
   website:       ""
 })
 
-

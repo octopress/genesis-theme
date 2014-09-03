@@ -5,27 +5,28 @@ header:
  
 # Links for main navigation
 nav:
-  - { url: '/', title: 'Home' }
+  - { url: '/', title: 'Posts' }
   - { url: '/archive/', title: 'Archive' }
-  - { url: '/feed/', title: 'RSS' }
+  - { url: '/feed/', title: 'Subscribe' }
 
 # Settings for category generator
 category:
   title:  Category
-  dir:   'categories'
-  feeds: false
-    
+
   # The base url for categories
   # An empty string means categories will live at the root directory.
+  dir:   'categories' 
 
   # To add per category feeds, use an array of category names you want feeds for.
   # for example:
   # feeds:
   #   - news
   #   - programming
+  feeds: false
+    
 
 post_index:
-  excerpt_articles: true
+  excerpt_articles: false
   permalink_label: "Permalink"
   read_more_label: "Continue Reading &rarr;"
 
@@ -36,5 +37,4 @@ feeds:
   article_feed: true
   excerpt_articles: false
 
-center_headings: true
 search: google
