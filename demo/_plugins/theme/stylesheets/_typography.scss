@@ -80,12 +80,7 @@ blockquote {
 hr {
   border: none;
   background: none;
-  width: 100%;
+  margin: 2.65rem auto;
   border-bottom: 1px solid $page-border;
-  &.dark {
-    border-bottom: 1px solid $gray;
-  }
-  &.thick {
-  }
 }
 

@@ -1,7 +1,6 @@
 # Settings for main header
-header:
-  title: My Octopress Blog
-  subtitle:
+title: My Octopress Blog
+subtitle:
  
 # Links for main navigation
 nav:
