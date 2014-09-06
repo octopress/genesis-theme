@@ -11,8 +11,8 @@ require 'octopress-include-tag'
 require 'octopress-content-for'
 require 'octopress-filter-tag'
 
-require 'octopress-genesis/version'
-require 'octopress-genesis/category-generator'
+require 'octopress-genesis-theme/version'
+require 'octopress-genesis-theme/category-generator'
 
 Octopress::Ink.add_plugin({
   name:          "Octopress Genesis",
