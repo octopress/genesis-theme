@@ -50,14 +50,36 @@ img {
   max-width: 100%;
 }
 
-blockquote {
+blockquote, figure.quote {
   border-left: 5px solid $page-border;
   margin-left: 0;
-  padding: 1px .5rem 1px 2rem;
+  padding: 0 .5rem 0 2rem;
   color: $medium-text-color;
   p {
     margin: .8rem 0;
   }
+}
+
+figure.quote {
+  blockquote {
+    border: none;
+    padding: 0;
+  }
+
+  figcaption {
+    margin-top: -.5rem;
+    margin-right: 40px;
+    padding-right: .5rem;
+    font-size: .8em;
+    &:before {
+      content: "—";
+    }
+  }
+
+  .quote-author:after {
+    content: ', ';
+  }
+
 }
 
 .float-right { 
