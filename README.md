@@ -39,9 +39,8 @@ the defaults.
 
 ```yaml
 # Settings for main header
-header:
-  title: My Octopress Blog
-  subtitle: A clever subtitle (optional)
+title: My Octopress Blog
+subtitle: A clever subtitle (optional)
  
 # Links for main navigation
 nav:
