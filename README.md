@@ -6,22 +6,24 @@ Note: This theme is in alpha development. What's left to do? See [the issues](ht
 
 ## Installation
 
-Add this line to your application's Gemfile:
+If you're using bundler add this gem to your site's Gemfile in the `:jekyll_plugins` group:
 
-    gem 'octopress-genesis-theme'
+    group :jekyll_plugins do
+      gem 'octopress-genesis-theme'
+    end
 
-And then execute:
+Then install the gem with Bundler
 
     $ bundle
 
-Or install it yourself as:
+To install manually without bundler:
 
     $ gem install octopress-genesis-theme
 
-Next add it to your gems list in Jekyll's `_config.yml`
+Then add the gem to your Jekyll configuration.
 
     gems:
-      - octopress-genesis-theme
+      -octopress-genesis-theme
 
 ## Usage
 
