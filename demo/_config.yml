@@ -2,5 +2,5 @@ exclude:
   - Gemfile*
 gems:
   - octopress-genesis-theme
-url: http://example.com/
+url: http://octopress.org/
 author: Brandon Mathis

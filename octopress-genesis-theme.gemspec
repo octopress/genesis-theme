@@ -18,20 +18,24 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_runtime_dependency "octopress-ink"
-  spec.add_runtime_dependency "octopress-linkblog", "~> 1.0"
-  spec.add_runtime_dependency "octopress-date-format", "~> 2.0"
-  spec.add_runtime_dependency "octopress-autoprefixer", "~> 1.0"
-  spec.add_runtime_dependency "octopress-wrap-tag", "~> 1.0"
-  spec.add_runtime_dependency "octopress-abort-tag", "~> 1.0"
-  spec.add_runtime_dependency "octopress-assign-tag", "~> 1.0"
-  spec.add_runtime_dependency "octopress-filter-tag", "~> 1.0"
-  spec.add_runtime_dependency "octopress-comment-tag", "~> 1.0"
-  spec.add_runtime_dependency "octopress-return-tag", "~> 1.0"
-  spec.add_runtime_dependency "octopress-content-for", "~> 1.0"
+  spec.add_runtime_dependency "octopress-linkblog"
+  spec.add_runtime_dependency "octopress-date-format"
+  spec.add_runtime_dependency "octopress-autoprefixer"
+  spec.add_runtime_dependency "octopress-wrap-tag"
+  spec.add_runtime_dependency "octopress-abort-tag"
+  spec.add_runtime_dependency "octopress-assign-tag"
+  spec.add_runtime_dependency "octopress-filter-tag"
+  spec.add_runtime_dependency "octopress-comment-tag"
+  spec.add_runtime_dependency "octopress-return-tag"
+  spec.add_runtime_dependency "octopress-content-for"
+  spec.add_runtime_dependency "octopress-feeds"
 
   spec.add_development_dependency "bundler", "~> 1.6"
   spec.add_development_dependency "rake"
   spec.add_development_dependency "octopress"
   spec.add_development_dependency "clash"
-  spec.add_development_dependency "pry-byebug"
+
+  if RUBY_VERSION >= "2"
+    spec.add_development_dependency "pry-byebug"
+  end
 end
