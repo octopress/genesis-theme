@@ -29,11 +29,4 @@ post_index:
   permalink_label: "Permalink"
   read_more_label: "Continue Reading &rarr;"
 
-feeds:
-  count: 10
-  main_feed: true
-  linkpost_feed: true
-  article_feed: true
-  excerpt_articles: false
-
 search: google
