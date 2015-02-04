@@ -1,6 +1,10 @@
 // Theme settings
 
+{% if theme.center-headings %}
+$center-headings: {{ theme.center-headings }};
+{% else %}
 $center-headings: false;
+{% endif %}
 
 // Stylesheets
 @import "colors";
