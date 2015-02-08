@@ -15,7 +15,7 @@
 #
 # Available theme/config.yml settings :
 # - category:
-#   url:          The subfolder to build category pages in (default is 'categories').
+#   dir:          The subfolder to build category pages in (default is 'categories').
 #   prefix:       The string used before the category name in the page title (default is 'Category').
 
 module Jekyll

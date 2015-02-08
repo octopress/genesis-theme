@@ -59,9 +59,12 @@ html, body, .site {
 .limit-width,
 .entry-title,
 .entry-subtitle,
+.entry-meta,
 .entry-social,
 .entry-content, 
+.entry-comments,
 .post-nav,
+.category-archive,
 .entry-footer {
   max-width: $main-content-max;
   padding-left: $content-pad;

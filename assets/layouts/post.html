@@ -33,6 +33,6 @@ layout: theme:default
   </footer>
 </article>
 {% include theme:post-nav.html %}
-{% wrap include theme:comments/embed.html if post.comments %}
+{% wrap include theme:comments/disqus-embed.html if page.comments %}
 <div class='entry-comments'>{{ yield }}</div>
 {% endwrap %}

@@ -50,10 +50,11 @@ nav:
   - { url: '/archive', title: 'Archive' }
   - { url: '/feed', title: 'RSS' }
 
-# Settings for category index generator
+# Settings for category index generator The prefix is used in page titles. The
+# dir controls what path under site root to put the category pages.
 category:
   prefix: Category
-  url:    category
+  dir:    category        
 
 post_index:
   excerpt_posts: true
