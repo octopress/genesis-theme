@@ -23,7 +23,7 @@ To install manually without bundler:
 Then add the gem to your Jekyll configuration.
 
     gems:
-      -octopress-genesis-theme
+      - octopress-genesis-theme
 
 ## Usage
 
