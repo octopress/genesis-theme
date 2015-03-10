@@ -1,6 +1,5 @@
-{% assign post_content = (theme.post_index.excerpt_articles ? post.excerpt : post.content) %}
-{% assign excerpted = true if post_content != post.content %}
-{% assign permalink_label = (excerpted ? theme.post_index.read_more_label : theme.post_index.permalink_label) %}
+{% assign post_content = (theme.excerpt_articles ? post.excerpt : post.content) %}
+{% assign permalink_label = (post.excerpted ? theme.post_index.read_more_label : theme.post_index.permalink_label) %}
 
 <article class="entry {% return 'excerpted' if excerpted %}" role="article">
   <header class="entry-header">
@@ -13,5 +12,7 @@
 
   <footer class='entry-footer'>
     <a class='permalink' rel="full-article" href="{{ post.url }}">{{ permalink_label }}</a>
+    {%_ categories post %}
+    {%_ tags post %}
   </footer>
 </article>

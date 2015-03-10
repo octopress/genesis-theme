@@ -1,9 +1,9 @@
 ---
 layout: theme:default
-permalink: /
+paginate: true
 ---
 <div class="post-index">
-  {% for post in site.posts limit: 10 %}
+  {% for post in paginator.posts %}
     {% include theme:index-post.html %}
   {% endfor %}
 </div>

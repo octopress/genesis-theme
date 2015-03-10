@@ -1,6 +1,6 @@
 <article class="archive {{ post.class }}" role="article">
   <header class="archive-entry-header">
-    <h1 class="archive-entry-title">{{ post.title_link }}</h1>
+    <h2 class="archive-entry-title">{{ post.title_link }}</h2>
     <div class="archive-entry-date">{{ post.date_html }}</div>
   </header>
 
@@ -10,9 +10,8 @@
   <p>
     {% filter join_lines:bullet | compact_newlines %}
     {{ post.permalink }}
-    {% if categories and categories != '' %}
-    <span class="article-categories">posted in {{ categories }}</span>
-    {% endif %}
+    {%_ categories post %}
+    {%_ tags post %}
     {% endfilter %}
   </p>
   </footer>

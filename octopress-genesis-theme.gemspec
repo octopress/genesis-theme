@@ -20,9 +20,9 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency "octopress-ink"
   spec.add_runtime_dependency "octopress-linkblog"
   spec.add_runtime_dependency "octopress-date-format"
+  spec.add_runtime_dependency "octopress-paginate"
   spec.add_runtime_dependency "octopress-autoprefixer"
   spec.add_runtime_dependency "octopress-wrap-tag"
-  spec.add_runtime_dependency "octopress-abort-tag"
   spec.add_runtime_dependency "octopress-assign-tag"
   spec.add_runtime_dependency "octopress-filter-tag"
   spec.add_runtime_dependency "octopress-comment-tag"
@@ -36,6 +36,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "clash"
 
   if RUBY_VERSION >= "2"
-    spec.add_development_dependency "pry-byebug"
+    spec.add_development_dependency "octopress-debugger"
   end
 end
