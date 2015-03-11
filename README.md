@@ -32,7 +32,7 @@ This is best demonstrated on a new Jekyll site:
 - Create a new Jekyll site.
 - Add some posts or pages.
 - Ensure that posts have the layout `theme:post`, and pages `theme:page`
-- Run `jekyll server` and check it out.
+- Run `jekyll serve` and check it out.
 
 ## Configuration
 
