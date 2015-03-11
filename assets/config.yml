@@ -8,25 +8,11 @@ nav:
   - { url: '/archive/', title: 'Archive' }
   - { url: '/feed/', title: 'Subscribe' }
 
-# Settings for category generator
-category:
-  title:  Category
-
-  # The base url for categories
-  # An empty string means categories will live at the root directory.
-  dir:   'categories' 
-
-  # To add per category feeds, use an array of category names you want feeds for.
-  # for example:
-  # feeds:
-  #   - news
-  #   - programming
-  feeds: false
-    
-
 post_index:
   excerpt_articles: false
   permalink_label: "Permalink"
   read_more_label: "Continue Reading &rarr;"
 
 search: google
+
+center_headings: false

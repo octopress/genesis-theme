@@ -1,6 +1,8 @@
+---
+---
 // Theme settings
 
-$center-headings: false;
+$center-headings: {{ theme.center_headings }};
 
 // Stylesheets
 @import "colors";

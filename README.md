@@ -23,7 +23,7 @@ To install manually without bundler:
 Then add the gem to your Jekyll configuration.
 
     gems:
-      -octopress-genesis-theme
+      - octopress-genesis-theme
 
 ## Usage
 
@@ -50,18 +50,13 @@ nav:
   - { url: '/archive', title: 'Archive' }
   - { url: '/feed', title: 'RSS' }
 
-# Settings for category index generator
-category:
-  prefix: Category
-  url:    category
-
 post_index:
   excerpt_posts: true
   permalink_label: "Permalink"
   read_more_label: "Continue Reading &rarr;"
 
 # Center the text in post and page headings.
-center-headings: true
+center_headings: true
 ```
 
 You can also easily overwrite stylesheets, layouts, partials and basically everything about
