@@ -42,7 +42,7 @@ the defaults.
 ```yaml
 # Settings for main header
 title: My Octopress Blog
-subtitle: A clever subtitle (optional)
+subtitle: # optional
  
 # Links for main navigation
 nav:
@@ -50,10 +50,11 @@ nav:
   - { url: '/archive', title: 'Archive' }
   - { url: '/feed', title: 'RSS' }
 
-post_index:
-  excerpt_posts: true
-  permalink_label: "Permalink"
-  read_more_label: "Continue Reading &rarr;"
+permalink_label: "Permalink"
+read_more_label: "Continue Reading →"
+
+# Show excerpts on post index
+excerpt_index: false
 
 # Center the text in post and page headings.
 center_headings: true
