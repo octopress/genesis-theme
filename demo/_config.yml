@@ -4,3 +4,5 @@ gems:
   - octopress-genesis-theme
 url: http://octopress.org/
 author: Brandon Mathis
+
+ink_watch: theme

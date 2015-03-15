@@ -8,11 +8,11 @@ nav:
   - { url: '/archive/', title: 'Archive' }
   - { url: '/feed/', title: 'Subscribe' }
 
-post_index:
-  excerpt_articles: false
-  permalink_label: "Permalink"
-  read_more_label: "Continue Reading &rarr;"
+permalink_label: "Permalink"
+read_more_label: "Continue Reading →"
+
+excerpt_index: false
 
 search: google
 
-center_headings: false
+center_headings: true
