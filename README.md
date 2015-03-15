@@ -64,6 +64,21 @@ You can also easily overwrite stylesheets, layouts, partials and basically every
 this plugin by adding a copy of that file in the `_plugins/theme` directory. More on that
 later.
 
+## Multilingual Support
+
+If you're going to be building a multilingual site, be sure to
+install [octopress-multilingual](https://github.com/octopress/multilingual) and this theme will automatically generate language specific pages for your:
+
+- Posts index
+- Archive page
+- Category indexes (if you use them)
+- Tag indexes (if you use them)
+
+Also you will be able to set theme configurations for each language.
+For example to configure theme settings for your German pages,
+you'd create a `_plugins/theme/config_[lang].yml` and add
+whatever settings you want to override.
+
 ## Contributing
 
 1. Fork it ( https://github.com/octopress/genesis-theme/fork )
