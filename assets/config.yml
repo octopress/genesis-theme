@@ -8,6 +8,7 @@ nav:
   - { url: '/archive/', title: 'Archive' }
   - { url: '/feed/', title: 'Subscribe' }
 
+# Link labels
 permalink_label: "Permalink"
 read_more_label: "Continue Reading →"
 
