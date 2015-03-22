@@ -1,7 +1,7 @@
 ---
 layout: theme:default
 ---
-<article class="post entry {% return 'graphic-title' if page.title-graphic %} {% return 'linkpost' if entry.linkpost %}" role="article">
+<article class="post entry {% return 'graphic-title' if page.title-graphic %} {% return 'linkpost' if page.linkpost %}" role="article">
   {% if page.title-graphic %}
     <header class="entry-header" style='background-image: url("{{ page.title-graphic }}")'>
   {% else %}
@@ -11,7 +11,6 @@ layout: theme:default
     <h1 class="entry-title">{{ title }}</h1>
     {% if page.subtitle %}<h2 class="entry-subtitle">{{ page.subtitle }}</h2>{% endif %}
     <div class="entry-meta">{{ page.date_html }}</div>
-    <div class="entry-social header">{% include theme:social/post-header.html %}</div>
     {% yield header %}
   </header>
 
@@ -29,10 +28,12 @@ layout: theme:default
         &mdash; <span class="categories">{{ page.categories | category_links }}</span>
       {% endif %}
     </div>
-    <div class="entry-social footer">{% include theme:social/post-footer.html %}</div>
+    {% wrap include theme:social/sharing.html if theme.sharing and page.sharing != false %}
+    <div class="entry-social footer">{{ yield }}</div>
+    {% endwrap %}
   </footer>
 </article>
 {% include theme:post-nav.html %}
-{% wrap include theme:comments/embed.html if post.comments %}
+{% wrap include theme:social/comments.html if theme.comments and page.comments != false %}
 <div class='entry-comments'>{{ yield }}</div>
 {% endwrap %}

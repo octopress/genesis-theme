@@ -17,4 +17,13 @@ excerpt_index: false
 
 search: google
 
+sharing:
+  - facebook
+  - twitter
+  - gplus
+share_with: links
+comments: false
+
+
 center_headings: true
+

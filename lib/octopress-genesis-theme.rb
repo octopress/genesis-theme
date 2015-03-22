@@ -10,6 +10,7 @@ require 'octopress-include-tag'
 require 'octopress-content-for'
 require 'octopress-filter-tag'
 require 'octopress-paginate'
+require 'octopress-social'
 
 require 'octopress-genesis-theme/version'
 

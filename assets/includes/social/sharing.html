@@ -1,0 +1,9 @@
+{% if theme.share_with == 'buttons' %}
+{% if theme.sharing contains 'twitter' %}{% tweet_button %}{% endif %}
+{% if theme.sharing contains 'facebook' %}{% facebook_like_button %}{% endif %}
+{% if theme.sharing contains 'gplus' %}{% gplus_one_button %}{% endif %}
+{% elsif theme.share_with == 'links' %}
+{% if theme.sharing contains 'twitter' %}{% tweet_link %}{% endif %}
+{% if theme.sharing contains 'facebook' %}{% facebook_share_link %}{% endif %}
+{% if theme.sharing contains 'gplus' %}{% gplus_share_link %}{% endif %}
+{% endif %}

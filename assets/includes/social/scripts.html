@@ -1,0 +1,5 @@
+{% if theme.share_with == 'buttons' %}
+{% if theme.sharing contains 'twitter' %}{% twitter_script_tag %}{% endif %}
+{% if theme.sharing contains 'facebook' or theme.comments == 'facebook' %}{% facebook_script_tag %}{% endif %}
+{% if theme.sharing contains 'gplus' %}{% gplus_script_tag %}{% endif %}
+{% elsif theme.comments == 'facebook' %}{% facebook_script_tag %}{% endif %}
