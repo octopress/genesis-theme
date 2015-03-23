@@ -2,36 +2,24 @@
 layout: theme:default
 ---
 <article class="post entry {% return 'graphic-title' if page.title-graphic %} {% return 'linkpost' if page.linkpost %}" role="article">
-  {% if page.title-graphic %}
-    <header class="entry-header" style='background-image: url("{{ page.title-graphic }}")'>
-  {% else %}
-    <header class="entry-header">
-  {% endif %}
+  
+  <header class="entry-header {% if page.title-graphic %} graphic-entry-header" style="background-image: url('{{ page.title-graphic }}'){% endif %}">
     {% assign title = (page.linkpost ? page.title_link : page.title_html) %}
     <h1 class="entry-title">{{ title }}</h1>
     {% if page.subtitle %}<h2 class="entry-subtitle">{{ page.subtitle }}</h2>{% endif %}
-    <div class="entry-meta">{{ page.date_html }}</div>
     {% yield header %}
   </header>
+
+  {% include theme:post_meta.html %}
 
   <div class="entry-content">{{ content }}</div>
 
   <footer class='entry-footer' role='contentinfo'>
-    <div class="entry-meta">
-      {% yield footer %}
-      {% assign author = page.author || site.author %}
-      {% if author %}
-        <span class='author-credit'>Written by {{ author }}</span> &mdash; 
-      {% endif %}
-      <span class='posted-date'>{{ page.date_time_html }}</span>
-      {% if page.categories.size > 0 %} 
-        &mdash; <span class="categories">{{ page.categories | category_links }}</span>
-      {% endif %}
-    </div>
-    {% wrap include theme:social/sharing.html if theme.sharing and page.sharing != false %}
-    <div class="entry-social footer">{{ yield }}</div>
-    {% endwrap %}
+    {% yield footer %}
   </footer>
+
+  {% include theme:post_meta.html %}
+
 </article>
 {% include theme:post-nav.html %}
 {% wrap include theme:social/comments.html if theme.comments and page.comments != false %}

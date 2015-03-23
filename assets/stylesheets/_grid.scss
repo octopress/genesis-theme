@@ -1,7 +1,3 @@
-/* ==========================================================================
- * Grid core - Based on Griddle, Heavily customized.
- * ========================================================================== */
-
 @mixin destroy-margins {
   @include destroy-top-margins;
   @include destroy-bottom-margins;
@@ -24,6 +20,9 @@
   @include destroy-margins;
 }
 
+/* ==========================================================================
+ * Grid core
+ * ========================================================================== */
 
 $grid-gutter: 4%;
 $margin: 30px;
@@ -140,14 +139,28 @@ $cell-sizes: (1:one, 2:two, 3:three, 4:four, 5:five, 6:six);
     .#{map-get($cell-sizes, $i)}-of-#{map-get($cell-sizes, $num)} {
       width: 100%*$i/$num; 
     }
+    .small-#{map-get($cell-sizes, $i)}-of-#{map-get($cell-sizes, $num)} {
+      @include at-least($small) {
+        width: 100%*$i/$num; 
+      }
+    }
+    .medium-#{map-get($cell-sizes, $i)}-of-#{map-get($cell-sizes, $num)} {
+      @include at-least($medium) {
+        width: 100%*$i/$num; 
+      }
+    }
+    .large-#{map-get($cell-sizes, $i)}-of-#{map-get($cell-sizes, $num)} {
+      @include at-least($medium) {
+        width: 100%*$i/$num; 
+      }
+    }
   }
 }
 
-@include grid-cell(6);
-@include grid-cell(5);
-@include grid-cell(4);
-@include grid-cell(3);
 @include grid-cell(2);
+@include grid-cell(3);
+@include grid-cell(4);
+@include grid-cell(5);
+@include grid-cell(6);
 .small-golden { width: 38.2%; }
 .large-golden { width: 61.8%; }
-
