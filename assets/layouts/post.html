@@ -10,15 +10,13 @@ layout: theme:default
     {% yield header %}
   </header>
 
-  {% include theme:post_meta.html %}
-
   <div class="entry-content">{{ content }}</div>
 
   <footer class='entry-footer' role='contentinfo'>
     {% yield footer %}
   </footer>
 
-  {% include theme:post_meta.html %}
+  {% include theme:post_meta.html | join_lines %}
 
 </article>
 {% include theme:post-nav.html %}

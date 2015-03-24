@@ -1,8 +1,6 @@
-<p class="entry-meta">
+<div class="entry-meta">
   <a href="{{ page.title_url }}">{{ page.date_html }}</a>
   {% include theme:category-links.html %}
   {% include theme:tag-links.html %}
-  {% wrap include theme:social/sharing.html if theme.sharing and page.sharing != false %}
-  <span class="entry-social">{{ yield }}</span>
-  {% endwrap %}
-</p>
+  {% include theme:social/sharing.html %}
+</div>
