@@ -2,7 +2,7 @@
 layout: theme:post
 title: "Hi Guys"
 date: 2014-08-03T22:59:25-05:00
-subtitle: How's it going?
+#subtitle: How's it going?
 external-url: http://timecube.com
 ---
 

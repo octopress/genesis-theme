@@ -8,4 +8,7 @@
 {% if theme.sharing contains 'facebook' %}{% facebook_share_link %}{% endif %}
 {% if theme.sharing contains 'gplus' %}{% gplus_share_link %}{% endif %}
 {% endif %}
+{% if theme.sharing contains 'email' %}
+{% email_share_link %}
+{% endif %}
 </span>{% endif %}

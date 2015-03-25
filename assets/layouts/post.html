@@ -19,7 +19,7 @@ layout: theme:default
   {% include theme:post_meta.html | join_lines %}
 
 </article>
-{% include theme:post-nav.html %}
+{% include theme:post_nav.html %}
 {% wrap include theme:social/comments.html if theme.comments and page.comments != false %}
 <div class='entry-comments'>{{ yield }}</div>
 {% endwrap %}

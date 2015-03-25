@@ -21,8 +21,12 @@ sharing:
   - facebook
   - twitter
   - gplus
+  - email
+
 share_with: links
 comments: false
+excerpt_posts: true
+excerpt_linkposts: false
 
 
 center_headings: true

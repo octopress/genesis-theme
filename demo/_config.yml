@@ -2,6 +2,7 @@ exclude:
   - Gemfile*
 gems:
   - octopress-genesis-theme
+  - octopress-debugger
 url: http://octopress.org/
 author: Brandon Mathis
 

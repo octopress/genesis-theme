@@ -33,10 +33,6 @@
 
 .entry-title {
   margin-bottom: 0;
-  font-size: 2.4rem;
-  @include at-least($medium) {
-    font-size: 2.8rem;
-  }
 }
 
 .entry-meta {
@@ -62,7 +58,7 @@
   z-index: 1;
 }
 .entry-subtitle {
-  font-size: 1.4rem;
+  font-size: 1.15em;
   margin-top: 0;
 }
 
