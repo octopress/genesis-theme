@@ -12,8 +12,10 @@ nav:
 permalink_label: "Permalink"
 read_more_label: "Continue Reading →"
 
-# Show excerpts on post index?
-excerpt_index: false
+# Show excerpts on post index
+excerpt_posts: true
+# Excerpt linkposts on index
+excerpt_linkposts: false
 
 search: google
 
@@ -23,11 +25,9 @@ sharing:
   - gplus
   - email
 
-share_with: buttons  # or buttons
-comments: false
-excerpt_posts: true
-excerpt_linkposts: false
+share_with: links # or buttons
 
+# Embed comments, options: false, facebook, disqus
+comments: false
 
 center_headings: true
-

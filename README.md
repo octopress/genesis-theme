@@ -2,6 +2,9 @@
 
 A new theme build on Octopress Ink. 
 
+[![Gem Version](http://img.shields.io/gem/v/octopress-genesis-theme.svg)](https://rubygems.org/gems/octopress-genesis-theme)
+[![License](http://img.shields.io/:license-mit-blue.svg)](http://octopress.mit-license.org)
+
 Note: This theme is in alpha development. What's left to do? See [the issues](https://github.com/octopress/genesis-theme/issues/).
 
 ## Installation
@@ -42,19 +45,37 @@ the defaults.
 ```yaml
 # Settings for main header
 title: My Octopress Blog
-subtitle: # optional
+subtitle:
  
 # Links for main navigation
 nav:
-  - { url: '/', title: 'Home' }
-  - { url: '/archive', title: 'Archive' }
-  - { url: '/feed', title: 'RSS' }
+  - { url: '/', title: 'Posts' }
+  - { url: '/archive/', title: 'Archive' }
+  - { url: '/feed/', title: 'Subscribe' }
 
+# Link labels
 permalink_label: "Permalink"
 read_more_label: "Continue Reading →"
 
 # Show excerpts on post index
-excerpt_index: false
+excerpt_posts: true
+# Excerpt linkposts on index
+excerpt_linkposts: false
+
+search: google
+
+sharing:
+  - facebook
+  - twitter
+  - gplus
+  - email
+
+# Defaults to sharing with links (for speed and privacy)
+# To use javascript share buttons, set share_with: buttons
+share_with: links
+
+# Embed comments, options: false, facebook, disqus
+comments: false
 
 # Center the text in post and page headings.
 center_headings: true
