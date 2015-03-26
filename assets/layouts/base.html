@@ -9,6 +9,7 @@
     <div class="site-content">{{ content | expand_urls }}</div>
   {% js_asset_tag %}
   </div>
+  {% include theme:social/scripts.html %}
   {% yield footer_scripts %}
 </body>
 </html>

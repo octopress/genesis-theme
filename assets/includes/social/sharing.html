@@ -1,4 +1,4 @@
-{% if theme.sharing and page.sharing != false %}<span class="entry-social-sharing">
+{% if theme.sharing and page.sharing != false %}<span class="entry-social-sharing {% if theme.share_with == 'buttons' %}social-buttons{% else %}social-links{% endif %}">
 {% if theme.share_with == 'buttons' %}
 {% if theme.sharing contains 'twitter' %}{% tweet_button %}{% endif %}
 {% if theme.sharing contains 'facebook' %}{% facebook_like_button %}{% endif %}
