@@ -5,12 +5,14 @@ layout: theme:default
   <header class="entry-header">
     <h1 class="entry-title">{{ page.title_html }}</h1>
     <div class="entry-meta">{{ page.date_html }}</div>
-    <div class="entry-social top">{% include theme:social/page-header.html %}</div>
+    {% wrap include theme:social/sharing.html if theme.sharing and page.sharing == true %}
+    <div class="entry-social top">{{ yield }}</div>
+    {% endwrap %}
   </header>
 
   <div class="entry-content">{{ content }}</div>
 
 </article>
-{% wrap include theme:comments/embed.html if page.comments %}
+{% wrap include theme:social/comments.html if theme.comments and page.comments == true %}
 <div class='entry-comments'>{{ yield }}</div>
 {% endwrap %}

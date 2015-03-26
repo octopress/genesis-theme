@@ -17,4 +17,17 @@ excerpt_index: false
 
 search: google
 
+sharing:
+  - facebook
+  - twitter
+  - gplus
+  - email
+
+share_with: buttons  # or buttons
+comments: false
+excerpt_posts: true
+excerpt_linkposts: false
+
+
 center_headings: true
+

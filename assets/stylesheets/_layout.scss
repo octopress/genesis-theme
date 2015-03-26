@@ -59,9 +59,8 @@ html, body, .site {
 .limit-width,
 .entry-title,
 .entry-subtitle,
-.entry-social,
 .entry-content, 
-header .entry-meta,
+.entry-meta,
 .post-nav,
 .entry-footer {
   max-width: $main-content-max;
@@ -69,4 +68,3 @@ header .entry-meta,
   padding-right: $content-pad;
   margin: { left: auto; right: auto; }
 }
-

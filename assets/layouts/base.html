@@ -2,11 +2,14 @@
 <html class="{{ page.class }}" lang="{% return page.lang || site.lang || 'en' %}" >
 <head>
 {% include theme:head.html | expand_urls %}
+{% yield head %}
 </head>
 <body>
   <div class="site">
     <div class="site-content">{{ content | expand_urls }}</div>
   {% js_asset_tag %}
   </div>
+  {% include theme:social/scripts.html %}
+  {% yield footer_scripts %}
 </body>
 </html>

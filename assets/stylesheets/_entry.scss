@@ -12,6 +12,9 @@
       top: -2rem;
     }
   }
+  a {
+    text-decoration: none;
+  }
 }
 
 .article-link {
@@ -30,10 +33,6 @@
 
 .entry-title {
   margin-bottom: 0;
-  font-size: 2.4rem;
-  @include at-least($medium) {
-    font-size: 2.8rem;
-  }
 }
 
 .entry-meta {
@@ -59,7 +58,7 @@
   z-index: 1;
 }
 .entry-subtitle {
-  font-size: 1.4rem;
+  font-size: 1.15em;
   margin-top: 0;
 }
 
@@ -90,5 +89,32 @@
       right: 0;
       background: rgba(#000, .08);
     }
+  }
+}
+
+.entry-meta {
+  display: block;
+  text-align: center;
+  .entry-header + & {
+    margin: 2em auto;
+  }
+  a {
+    color: $light-text-color;
+    &:hover {
+      color: $link-color;
+    }
+  }
+}
+
+.entry-social-sharing {
+  display: block;
+  margin: 2em auto;
+}
+
+.entry-categories, .entry-tags {
+  &:before {
+    content: "•";
+    padding: 0 8px;
+    opacity: .4;
   }
 }

@@ -1,0 +1,16 @@
+{% if page.previous.url or page.next.url %}
+<nav role="pagination" class="post-nav">
+{% if page.previous.url %}
+<a class="previous-post" href="{{ page.previous.url }}" title="Previous Article: {{ page.previous.title }}">
+  <div class='previous-post-marker'><span class='previous-post-arrow'>&larr;</span> Previous Article</div>
+  <h6 class='previous-post-title'>{{ page.previous.title }}</h6>
+</a>
+{% endif %}
+{% if page.next.url %}
+<a class="next-post" href="{{ page.next.url }}" title="Next Article: {{ page.next.title }}">
+  <div class='next-post-marker'>Next Article <span class='next-post-arrow'>&rarr;</span></div>
+  <h6 class='next-post-title'>{{ page.next.title }}</h6>
+</a>
+{% endif %}
+</nav>
+{% endif %}
