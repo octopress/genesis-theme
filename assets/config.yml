@@ -23,7 +23,7 @@ sharing:
   - gplus
   - email
 
-share_with: links  # or buttons
+share_with: buttons  # or buttons
 comments: false
 excerpt_posts: true
 excerpt_linkposts: false
