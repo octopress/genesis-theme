@@ -1,36 +1,45 @@
 .site-top-content {
-  display: table;
   width: 100%;
   background-color: $site-header-bg;
+  padding: 1px 0;
 }
 
 .site-header, .site-nav {
-  padding: 1rem 1rem;
   vertical-align: middle;
-  @include at-least($medium) {
-    padding: 1rem 1.5rem;
-  }
-}
-
-.site-header {
-  text-align: left;
-  display: table-cell;
+  text-align: center;
+  margin: .5em 0;
 }
 
 .site-title {
   margin: 0;
-  font-size: 1.8rem;
+  font-size: 1.5rem;
 }
+
+@include at-least($medium) {
+  .site-top-content {
+    display: table;
+  }
+  .site-header, .site-nav {
+    display: table-cell;
+    padding: .7rem 1.4rem;
+  }
+  .site-header {
+    text-align: left;
+  }
+  .site-nav {
+    text-align: right;
+  }
+  .site-title {
+    margin: 0;
+    font-size: 1.8rem;
+  }
+}
+
 
 .site-title-link {
   text-decoration: none;
   color: $site-title-color;
   font-weight: normal;
-}
-
-.site-nav {
-  display: table-cell;
-  text-align: right;
 }
 
 .site-nav-link {
