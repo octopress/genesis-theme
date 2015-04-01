@@ -5,13 +5,7 @@
 $center-headings: {{ theme.center_headings }};
 
 // Stylesheets
-@import "colors";
-@import "sizes";
-@import "mixins";
-@import "fonts";
-@import "typography";
-@import "theme";
-@import "grid";
+@import "core/index";
 @import "layout";
 @import "header";
 @import "entry";

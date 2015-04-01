@@ -1,0 +1,10 @@
+<style>
+  .site-top-content a {
+    color:  {{ page.header_text_color }};
+  }
+  .entry-header {
+    background-image: url('{{ page.header_image }}');
+    {% if page.header_text_color %}color: {{ page.header_text_color }};{% endif %}
+  }
+</style>
+{% assign page_class = 'header-image' %}

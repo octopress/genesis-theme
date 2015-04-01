@@ -62,22 +62,20 @@
   margin-top: 0;
 }
 
-.graphic-title {
-  margin-top: 0;
+.header-image {
+  .site-top-content {
+    background: none;
+    position: absolute;
+    z-index: 10;
+  }
+  .entry {
+    margin-top: 0;
+  }
   .entry-header {
     background-size: cover;
     background-position: center center;
     padding: { top: 10%; bottom: 10%; }
-  }
-
-}
-
-.light-title {
-  .entry-header, .entry-header .entry-meta {
-    color: #fff;
     text-shadow: rgba(#000, .5) 0 1px 1px;
-  }
-  .entry-header {
     position: relative;
     &:after {
       content: "";

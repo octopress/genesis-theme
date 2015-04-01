@@ -5,8 +5,8 @@ date: 2014-08-03T23:18:12-05:00
 categories: 
   - 'test'
   - 'news'
-title-graphic: /images/panorama.jpg
-class: light-title
+header_image: /images/panorama.jpg
+header_text_color: "#fff"
 subtitle: But was it? Was it really?
 ---
 

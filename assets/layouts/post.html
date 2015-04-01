@@ -1,9 +1,8 @@
 ---
 layout: theme:default
 ---
-<article class="post entry {% return 'graphic-title' if page.title-graphic %} {% return 'linkpost' if page.linkpost %}" role="article">
-  
-  <header class="entry-header {% if page.title-graphic %} graphic-entry-header" style="background-image: url('{{ page.title-graphic }}'){% endif %}">
+<article class="post entry {% return 'header-image' if page.header_image %} {% return 'linkpost' if page.linkpost %}" role="article">
+  <header class="entry-header">
     {% assign title = (page.linkpost ? page.title_link : page.title_html) %}
     <h1 class="entry-title">{{ title }}</h1>
     {% if page.subtitle %}<h2 class="entry-subtitle">{{ page.subtitle }}</h2>{% endif %}
