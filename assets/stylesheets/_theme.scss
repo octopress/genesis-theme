@@ -17,12 +17,10 @@ a {
 }
 
 .full-width {
-  @supports(width:100vw) {
-    width: 101vw;
-    transform: translateX(-#{$content-pad});
-    @include at-least($main-content-max) {
-      $w: $main-content-max - ($content-pad * 2);
-      transform: translateX(calc((#{$w} - 101vw)/2));
-    }
+  width: 101vw;
+  transform: translateX(-#{$content-pad});
+  @include at-least($main-content-max) {
+    $w: $main-content-max - ($content-pad * 2);
+    transform: translateX(calc((#{$w} - 101vw)/2));
   }
 }

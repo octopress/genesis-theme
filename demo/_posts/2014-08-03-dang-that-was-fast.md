@@ -7,6 +7,8 @@ categories:
   - 'news'
 header_image: /images/panorama.jpg
 header_text_color: "#fff"
+site_header_text_color: rgba(255, 255, 255, .5)
+
 subtitle: But was it? Was it really?
 ---
 

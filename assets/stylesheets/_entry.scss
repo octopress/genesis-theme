@@ -72,11 +72,18 @@
     margin-top: 0;
   }
   .entry-header {
+    background-repeat: no-repeat;
+    min-height: 84vh;
+    max-height: 800px;
+	background-attachment: scroll;
     background-size: cover;
     background-position: center center;
-    padding: { top: 10%; bottom: 10%; }
     text-shadow: rgba(#000, .5) 0 1px 1px;
     position: relative;
+    display: table;
+    width: 100%;
+    
+    // Darken image a bit
     &:after {
       content: "";
       position: absolute;
@@ -87,6 +94,16 @@
       right: 0;
       background: rgba(#000, .08);
     }
+  }
+
+  .entry-header-content {
+    display: table-cell;
+    padding: 15% 0;
+    vertical-align: middle;
+  }
+
+  .entry-title {
+    font-size: 3.5em;
   }
 }
 

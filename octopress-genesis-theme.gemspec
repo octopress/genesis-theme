@@ -26,8 +26,6 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency "octopress-assign-tag"
   spec.add_runtime_dependency "octopress-filter-tag"
   spec.add_runtime_dependency "octopress-comment-tag"
-  spec.add_runtime_dependency "octopress-return-tag"
-  spec.add_runtime_dependency "octopress-content-for"
   spec.add_runtime_dependency "octopress-social"
 
   spec.add_development_dependency "bundler", "~> 1.6"

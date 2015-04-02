@@ -1,10 +1,12 @@
 <style>
-  .site-top-content a {
-    color:  {{ page.header_text_color }};
+  .site-top-content, .site-top-content a {
+    {% wrap return page.site_header_text_color || page.header_text_color %}color: {{ yield }};{% endwrap %}
   }
   .entry-header {
     background-image: url('{{ page.header_image }}');
-    {% if page.header_text_color %}color: {{ page.header_text_color }};{% endif %}
+  }
+  .entry-header, .entry-header a {
+    {% wrap return page.header_text_color %}color: {{ yield }};{% endwrap %}
   }
 </style>
 {% assign page_class = 'header-image' %}

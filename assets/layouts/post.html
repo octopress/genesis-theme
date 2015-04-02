@@ -4,9 +4,11 @@ layout: theme:default
 <article class="post entry {% return 'header-image' if page.header_image %} {% return 'linkpost' if page.linkpost %}" role="article">
   <header class="entry-header">
     {% assign title = (page.linkpost ? page.title_link : page.title_html) %}
-    <h1 class="entry-title">{{ title }}</h1>
-    {% if page.subtitle %}<h2 class="entry-subtitle">{{ page.subtitle }}</h2>{% endif %}
-    {% yield header %}
+    <div class='entry-header-content'>
+      <h1 class="entry-title">{{ title }}</h1>
+      {% if page.subtitle %}<h2 class="entry-subtitle">{{ page.subtitle }}</h2>{% endif %}
+      {% yield header %}
+    </div>
   </header>
 
   <div class="entry-content">{{ content }}</div>

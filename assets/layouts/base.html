@@ -8,8 +8,8 @@
 <body>
   <div class="site">
     <div class="site-content">{{ content | expand_urls }}</div>
-  {% js_asset_tag %}
   </div>
+  {% js_asset_tag %}
   {% include theme:social/scripts.html %}
   {% yield footer_scripts %}
 </body>
