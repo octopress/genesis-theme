@@ -1,3 +1,7 @@
-$title-font: "Source Serif Pro", Georgia, Times, 'Times New Roman', serif;
-$body-font:  "Source Serif Pro", Georgia, Times, 'Times New Roman', serif;
-$meta-font: "Source Sans Pro", "Helvetica Neue", Arial, sans;
+$serif-font-stack: "Source Serif Pro", Georgia, Times, 'Times New Roman', serif;
+$sans-font-stack:  "Source Sans Pro", "Helvetica Neue", Arial, sans;
+
+$main-font:  $serif-font-stack;
+$title-font:    $serif-font-stack;
+$subtitle-font: $serif-font-stack;
+$meta-font:     $sans-font-stack;

@@ -1,7 +1,7 @@
 ---
 layout: theme:default
 ---
-<article class="post entry {% return 'header-image' if page.header_image %} {% return 'linkpost' if page.linkpost %}" role="article">
+<article class="post entry {% return 'cover-image' if page.cover_image %} {% return 'linkpost' if page.linkpost %}" role="article">
   <header class="entry-header">
     {% assign title = (page.linkpost ? page.title_link : page.title_html) %}
     <div class='entry-header-content'>

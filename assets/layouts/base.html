@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-{% include theme:header_image.html if page.header_image %}
-<html class="{{ page.class }} {{ page_class }}" lang="{% return page.lang || site.lang || 'en' %}" >
+{% include theme:cover_image.html if page.cover_image %}
+<html class="{{ page.class }} {% return 'cover-image' if page.cover_image %}" lang="{% return page.lang || site.lang || 'en' %}" >
 <head>
 {% include theme:head.html | expand_urls %}
 {% yield head %}

@@ -58,15 +58,23 @@
   z-index: 1;
 }
 .entry-subtitle {
+  font-family: $subtitle-font;
   font-size: 1.15em;
   margin-top: 0;
 }
 
-.header-image {
+.cover-image {
   .site-top-content {
     background: none;
     position: absolute;
     z-index: 10;
+    a {
+      opacity: .7;
+      transition: opacity .25s ease-in-out;
+      &:hover {
+        opacity: 1;
+      }
+    }
   }
   .entry {
     margin-top: 0;
@@ -104,6 +112,7 @@
   }
 
   .entry-title {
+    font-family: $title-font;
     font-size: 2.5em;
 
     @include at-least($medium) {

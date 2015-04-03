@@ -3,10 +3,9 @@
     {% wrap return page.site_header_text_color || page.header_text_color %}color: {{ yield }};{% endwrap %}
   }
   .entry-header {
-    background-image: url('{{ page.header_image }}');
+    background-image: url('{{ page.cover_image }}');
   }
   .entry-header, .entry-header a {
     {% wrap return page.header_text_color %}color: {{ yield }};{% endwrap %}
   }
 </style>
-{% assign page_class = 'header-image' %}

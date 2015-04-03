@@ -5,9 +5,8 @@ date: 2014-08-03T23:18:12-05:00
 categories: 
   - 'test'
   - 'news'
-header_image: /images/panorama.jpg
+cover_image: /images/panorama.jpg
 header_text_color: "#fff"
-site_header_text_color: rgba(255, 255, 255, .7)
 
 subtitle: But was it? Was it really?
 ---

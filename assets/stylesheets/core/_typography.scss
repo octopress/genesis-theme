@@ -1,11 +1,9 @@
-$post-title-font-stack: "Source Serif Pro", Georgia, Times, 'Times New Roman', serif;
-
 html {
   font-size: $base-font-size;
 }
 
 body {
-  font-family: "Source Serif Pro", Georgia, Times, 'Times New Roman', serif;
+  font-family: $main-font;
   line-height: 1.65em;
 }
 
