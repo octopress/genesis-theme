@@ -1,6 +1,5 @@
 .entry {
   margin: { top: 4rem; bottom: 4rem; }
-  transform: translate3d(0,0,0);
   + .entry {
     padding-top: 2rem;
     &:before {
@@ -74,8 +73,9 @@
   }
   .entry-header {
     background-repeat: no-repeat;
-    min-height: 84vh;
-    max-height: 800px;
+    height: 100vh;
+    max-height: 1000px;
+    overflow: visible;
 	background-attachment: scroll;
     background-size: cover;
     background-position: center center;
@@ -99,7 +99,7 @@
 
   .entry-header-content {
     display: table-cell;
-    padding: 15% 0;
+    padding: 10% 0;
     vertical-align: middle;
   }
 

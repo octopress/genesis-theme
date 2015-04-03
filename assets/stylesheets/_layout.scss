@@ -12,6 +12,7 @@ html, body, .site {
   min-height: 100%;
   display: table;
   table-layout: fixed;
+  transform: translate3d(0,0,0);
 }
 
 .site-top, .site-main, .site-bottom {
