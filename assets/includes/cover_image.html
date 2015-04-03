@@ -1,9 +1,9 @@
 <style>
-  .site-top-content, .site-top-content a {
-    {% wrap return page.site_header_text_color || page.header_text_color %}color: {{ yield }};{% endwrap %}
-  }
   .entry-header {
     background-image: url('{{ page.cover_image }}');
+  }
+  .site-title, .main-nav {
+    {% wrap return page.site_header_text_color || page.header_text_color %}color: {{ yield }};{% endwrap %}
   }
   .entry-header, .entry-header a {
     {% wrap return page.header_text_color %}color: {{ yield }};{% endwrap %}

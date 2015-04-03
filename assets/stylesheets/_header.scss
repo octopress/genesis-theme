@@ -4,7 +4,7 @@
   padding: 1px 0;
 }
 
-.site-header, .site-nav {
+.site-header, .main-nav {
   vertical-align: middle;
   text-align: center;
   margin: .5em 0;
@@ -15,19 +15,25 @@
   font-size: 1.5rem;
 }
 
+@include until($medium) {
+  .main-nav-item {
+    display: none;
+  }
+}
 @include at-least($medium) {
   .site-top-content {
     display: table;
   }
-  .site-header, .site-nav {
+  .site-header, .main-nav {
     display: table-cell;
     padding: .7rem 1.4rem;
   }
   .site-header {
     text-align: left;
   }
-  .site-nav {
+  .main-nav {
     text-align: right;
+    font-size: $main-nav-font-size;
   }
   .site-title {
     margin: 0;
@@ -35,20 +41,98 @@
   }
 }
 
+.cover-image {
+  .site-top-content {
+    position: absolute;
+    z-index: 10;
+    background: none;
+    overflow: visible;
+    padding: 0;
+  }
+  .main-nav-item {
+    opacity: .7;
+    transition: opacity .25s ease-in-out;
+    &:hover {
+      opacity: 1;
+    }
+  }
+  .main-nav-search {
+    opacity: 1;
+    input {
+      opacity: .7;
+      &:hover, &:focus {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.site-title {
+  color: $site-title-color;
+}
 
 .site-title-link {
   text-decoration: none;
-  color: $site-title-color;
+  color: inherit;
   font-weight: normal;
 }
 
-.site-nav-link {
+.main-nav {
+  color: $main-nav-color;
+}
+
+.main-nav-item {
+  font-family: $nav-font;
   text-decoration: none;
-  color: $site-nav-color;
+  display: inline-block;
+  color: inherit;
   padding: 0 .3rem;
 
   &:last-child {
     padding-right: 0;
+  }
+}
+
+.main-nav-search {
+  padding: 0;
+  display: inline-block;
+  input {
+  cursor: pointer;
+    font-family: $nav-font;
+    line-height: 1.65em;
+    font-size: .8rem;
+    border: {
+      color: transparent;
+      width: 1px;
+      style: solid;
+      radius: .2rem;
+    }
+    background: none;
+    color: inherit;
+    padding: 0 .5rem;
+    outline: none;
+    width: 5em;
+    transition: all .25s ease-in-out;
+    position: relative;
+    top: -1px;
+
+    &:focus {
+      outline: none;
+      width: 10em;
+      border-color: inherit;
+      @include placeholder {
+        font-size: .8rem;
+        opacity: .5;
+      }
+
+    }
+    @include placeholder {
+      transition: opacity .25s ease-in-out;
+      font-size: $main-nav-font-size;
+      font-family: $nav-font;
+      color: inherit;
+      opacity: 1;
+    }
   }
 }
 

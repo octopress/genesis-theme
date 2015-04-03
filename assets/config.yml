@@ -3,7 +3,7 @@ title: My Octopress Blog
 subtitle:
  
 # Links for main navigation
-nav:
+main_nav:
   - { url: '/', title: 'Posts' }
   - { url: '/archive/', title: 'Archive' }
   - { url: '/feed/', title: 'Subscribe' }

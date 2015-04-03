@@ -7,6 +7,13 @@
   @media all and (min-width: $size) { @content; }
 }
 
+@mixin placeholder {
+  &::-webkit-input-placeholder { @content; }
+  &:-moz-placeholder           { @content; }
+  &::-moz-placeholder          { @content; }
+  &:-ms-input-placeholder      { @content; }
+}
+
 @mixin between($small-width, $large-width) {
   $large-width: $large-width - 1;
   @media (max-width: $large-width) and (min-width: $small-width) { @content; }

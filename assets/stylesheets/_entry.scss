@@ -64,18 +64,6 @@
 }
 
 .cover-image {
-  .site-top-content {
-    background: none;
-    position: absolute;
-    z-index: 10;
-    a {
-      opacity: .7;
-      transition: opacity .25s ease-in-out;
-      &:hover {
-        opacity: 1;
-      }
-    }
-  }
   .entry {
     margin-top: 0;
   }
