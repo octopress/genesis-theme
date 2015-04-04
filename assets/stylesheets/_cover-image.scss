@@ -1,0 +1,26 @@
+.cover-image {
+  .site-top-content {
+    position: absolute;
+    z-index: 10;
+    background: none;
+    overflow: visible;
+    padding: 0;
+  }
+  .main-nav-item {
+    opacity: .7;
+    transition: opacity .25s ease-in-out;
+    &:hover {
+      color: inherit;
+      opacity: 1;
+    }
+  }
+  .main-nav-search {
+    opacity: 1;
+    input {
+      opacity: .7;
+      &:hover, &:focus {
+        opacity: 1;
+      }
+    }
+  }
+}

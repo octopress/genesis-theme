@@ -1,16 +1,20 @@
-/*$site-bg:            #edefef;*/
-$main-bg:            #eef0f2;//#edefef;//#f5f6f6;
-$page-border:        #dadede;
+$main-bg:              #f4f3ef;//#edefef;//#f5f6f6;
+$page-border:          #dadede;
 
-$accent-color:       #e46767; // pale red
+$accent-color:         #e46767; // pale red
 
-$text-color:         #444;
-$medium-text-color:  #666;
-$light-text-color:   #888;
-$link-color:         #4A89DC;
+$text-color:           #444;
+$medium-text-color:    #666;
+$light-text-color:     #888;
+$link-color:           $accent-color;//#4A89DC;
 
-$site-header-bg:     #fff;//#edefef;
-$site-title-color:   #555;
-$main-nav-color:     #333;
+$site-header-bg:       #fff;//#edefef;
+$site-title-color:     #555;
+$main-nav-color:       #333;
 
-$gray:               #8d9297;
+$mobile-nav-bg:        #393b3d;
+$mobile-nav-color:     #fff;
+$mobile-search-color:  #fff;
+$mobile-nav-border:    lighten($mobile-nav-bg, 5);
+
+$gray:                 #8d9297;

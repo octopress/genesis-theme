@@ -1,5 +1,6 @@
 .entry {
   margin: { top: 4rem; bottom: 4rem; }
+  margin: { left: auto; right: auto; }
   + .entry {
     padding-top: 2rem;
     &:before {
@@ -11,9 +12,6 @@
       position: relative;
       top: -2rem;
     }
-  }
-  a {
-    text-decoration: none;
   }
 }
 
@@ -41,10 +39,6 @@
 
 .entry-content {
   margin: { top: 3rem; bottom: 3rem; }
-}
-
-.entry {
-  margin: { left: auto; right: auto; }
 }
 
 .entry-meta, .entry-subtitle, .entry-footer {

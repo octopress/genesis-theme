@@ -15,6 +15,12 @@ html, body, .site {
   transform: translate3d(0,0,0);
 }
 
+.hidden-label {
+  font-size: 0;
+  width: 0px;
+  display: inline-block;
+}
+
 .site-top, .site-main, .site-bottom {
   display: table-row;
 }

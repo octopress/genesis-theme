@@ -1,6 +1,7 @@
+<div class='nav-panel'>
 <nav class='mobile-nav' role="navigation">
-  <div class='mobile-nav-item'>{% include theme:search.html %}</div>
+  <div class='mobile-nav-item mobile-nav-search'>{% include theme:search.html %}</div>
   {% include theme:nav_items.html nav=theme.main_nav class='mobile-nav' %}
   {% include theme:nav_items.html nav=theme.footer_nav class='mobile-nav' if theme.footer_nav %}
 </nav>
-
+</div>

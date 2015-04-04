@@ -3,8 +3,17 @@ html {
   background: $main-bg;
 }
 
+.site-content {
+  background: $main-bg;
+}
+
 a {
+  text-decoration: none;
   color: $link-color;
+  transition: color .25s ease-in-out;
+  &:hover {
+    color: $light-text-color;
+  }
 }
 
 .site-top-content,

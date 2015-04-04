@@ -1,6 +1,5 @@
 .site-top-content {
   width: 100%;
-  background-color: $site-header-bg;
   padding: 1px 0;
 }
 
@@ -13,58 +12,6 @@
 .site-title {
   margin: 0;
   font-size: 1.5rem;
-}
-
-@include until($medium) {
-  .main-nav-item {
-    display: none;
-  }
-}
-@include at-least($medium) {
-  .site-top-content {
-    display: table;
-  }
-  .site-header, .main-nav {
-    display: table-cell;
-    padding: .7rem 1.4rem;
-  }
-  .site-header {
-    text-align: left;
-  }
-  .main-nav {
-    text-align: right;
-    font-size: $main-nav-font-size;
-  }
-  .site-title {
-    margin: 0;
-    font-size: 1.8rem;
-  }
-}
-
-.cover-image {
-  .site-top-content {
-    position: absolute;
-    z-index: 10;
-    background: none;
-    overflow: visible;
-    padding: 0;
-  }
-  .main-nav-item {
-    opacity: .7;
-    transition: opacity .25s ease-in-out;
-    &:hover {
-      opacity: 1;
-    }
-  }
-  .main-nav-search {
-    opacity: 1;
-    input {
-      opacity: .7;
-      &:hover, &:focus {
-        opacity: 1;
-      }
-    }
-  }
 }
 
 .site-title {
@@ -82,11 +29,14 @@
 }
 
 .main-nav-item {
+  display: none;
   font-family: $nav-font;
   text-decoration: none;
-  display: inline-block;
   color: inherit;
   padding: 0 .3rem;
+  &:hover {
+    color: $accent-color;
+  }
 
   &:last-child {
     padding-right: 0;
@@ -95,9 +45,8 @@
 
 .main-nav-search {
   padding: 0;
-  display: inline-block;
   input {
-  cursor: pointer;
+    cursor: pointer;
     font-family: $nav-font;
     line-height: 1.65em;
     font-size: .8rem;
@@ -141,3 +90,32 @@
   color: $medium-text-color;
   font-size: .95rem;
 }
+
+@include at-least($small) {
+  .main-nav-item {
+    display: inline-block;
+  }
+}
+
+
+@include at-least($medium) {
+  .site-top-content {
+    display: table;
+  }
+  .site-header, .main-nav {
+    display: table-cell;
+    padding: .7rem 1.4rem;
+  }
+  .site-header {
+    text-align: left;
+  }
+  .main-nav {
+    text-align: right;
+    font-size: $main-nav-font-size;
+  }
+  .site-title {
+    margin: 0;
+    font-size: 1.8rem;
+  }
+}
+

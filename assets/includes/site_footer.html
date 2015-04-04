@@ -1,5 +1,6 @@
 <footer class='site-footer' role="contentinfo">
-  <p class='footer-copyright'>Copyright © {{ site.time | date: "%Y" }} - {{ site.author }} - Powered by Octopress</p>
+  <p class='footer-copyright'>Copyright © {{ site.time | date: "%Y" }}{% wrap return site.author %} - {{ yield }}{% endwrap %}
+  - Powered by <a href='http://octopress.org'>Octopress</a></p>
   {% if theme.footer_nav %}
   <nav class='footer-nav' role="navigation">
     {% include theme:nav_items.html nav=theme.footer_nav class='footer-nav' %}
