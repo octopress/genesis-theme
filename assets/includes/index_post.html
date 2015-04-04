@@ -9,7 +9,7 @@
   <header class="entry-header">
     <h2 class="entry-title">{{ post.title_link }}</h2>
     {% if post.subtitle %}<h2 class="entry-subtitle">{{ post.subtitle }}</h2>{% endif %}
-    <div class="entry-meta"><a href="{{ page.title_url }}">{{ post.date_html }}</a></div>
+    <div class="entry-meta"><a href="{{ post.url | expand_url }}">{{ post.date_html }}</a></div>
   </header>
 
   <div class="entry-content">{{ post_content }}</div>

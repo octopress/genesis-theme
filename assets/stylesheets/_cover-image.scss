@@ -6,8 +6,8 @@
     overflow: visible;
     padding: 0;
   }
-  .main-nav-item {
-    opacity: .7;
+  .main-nav-item, .site-title-link {
+    opacity: .8;
     transition: opacity .25s ease-in-out;
     &:hover {
       color: inherit;
@@ -17,7 +17,7 @@
   .main-nav-search {
     opacity: 1;
     input {
-      opacity: .7;
+      opacity: .8;
       &:hover, &:focus {
         opacity: 1;
       }

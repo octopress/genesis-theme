@@ -8,4 +8,7 @@
   .entry-header, .entry-header a {
     {% wrap return page.header_text_color %}color: {{ yield }};{% endwrap %}
   }
+  .mobile-nav-icon, .mobile-nav-icon:before, .mobile-nav-icon:after {
+    {% wrap return page.header_text_color %}background: {{ yield }};{% endwrap %}
+  }
 </style>
