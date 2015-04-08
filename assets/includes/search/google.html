@@ -1,4 +1,7 @@
 <form class='site-search' action="https://google.com/search" method="get">
   <input type="hidden" name="sitesearch" value="{{ site.url | strip_url_protocol }}">
-  <input class="search-input" type="text" name="q" results="0" placeholder="Search" accesskey="/">
+  <input id='site_search_{{ include.nav }}' class="search-input" type="text" name="q" results="0" placeholder="Search" accesskey="/">
+  {% if include.nav == 'main' %}
+  <label for='site_search_{{ include.nav }}'>Search</label>
+  {% endif %}
 </form>
