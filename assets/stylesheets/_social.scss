@@ -28,14 +28,14 @@
     content: attr(title);
     position: absolute;
     top: 0;
-    padding: .1rem .4rem;
-    border-radius: .2rem;
+    padding: 4px 5px;
+    border-radius: 3px;
     display: inline-block;
-    line-height: 1rem;
-    font-size: .7rem;
+    line-height: 1em;
+    font-size: 14px;
     white-space: nowrap;
     transition: all .25s ease-in-out;
-    transform: translate(-50%, -10px);
+    transform: translate(-50%, -.1em);
     color: transparent;
     z-index: -2;
     border: 1px solid rgba(#000, 0);
@@ -55,7 +55,7 @@
     transition: all .25s ease-in-out;
   }
   &:hover:before {
-    transform: translate(-50%, -9px);
+    transform: translate(-50%, -10px);
   }
 }
 

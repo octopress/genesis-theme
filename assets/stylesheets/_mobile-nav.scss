@@ -8,6 +8,7 @@
   background: $mobile-nav-bg;
   font-family: $nav-font;
   transform:  translate3d(0,0,0);
+  z-index: -1;
 }
 
 .mobile-nav {
@@ -25,8 +26,8 @@
   border: 0px;
   background: none;
   position: absolute;
-  top: 1.5em;
-  left: 1.5em;
+  top: .8em;
+  left: .8em;
   
   &:focus {
     outline: none;
@@ -75,22 +76,22 @@
   color: $mobile-nav-color;
   display: block;
   text-decoration: none;
-  padding: .5rem 1rem;
+  padding: .5em 1.3em;
   border-bottom: 1px solid $mobile-nav-border;
 }
 
 .mobile-nav-search {
-  padding: 1rem .5rem 0;
+  padding: 1em .6em 0;
   border-bottom: 0;
   input {
     font-family: $nav-font;
-    font-size: $base-font-size;
+    font-size: 1.6rem;
     line-height: 1.65em;
     margin: 0;
     background: $mobile-nav-border;
     border: 1px solid lighten($mobile-nav-border, 5);
     color: $mobile-search-color;
-    padding: 0 .5rem;
+    padding: .3em .7em;
     outline: none;
     width: 100%;
     transition: all .25s ease-in-out;
@@ -99,11 +100,12 @@
 
     &:focus {
       outline: none;
+      @include placeholder {
+        opacity: .3;
+      }
     }
     @include placeholder {
       transition: opacity .25s ease-in-out;
-      font-size: $main-nav-font-size;
-      font-family: $nav-font;
       color: $mobile-search-color;
       opacity: .5;
     }

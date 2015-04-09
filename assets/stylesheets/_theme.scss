@@ -9,7 +9,7 @@ html {
 
 a {
   text-decoration: none;
-  color: $link-color;
+  color: $accent-color;
   transition: color .25s ease-in-out;
   &:hover {
     color: $light-text-color;

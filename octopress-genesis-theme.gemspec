@@ -26,6 +26,7 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency "octopress-assign-tag"
   spec.add_runtime_dependency "octopress-filter-tag"
   spec.add_runtime_dependency "octopress-comment-tag"
+  spec.add_runtime_dependency "octopress-quote-tag"
   spec.add_runtime_dependency "octopress-social"
   spec.add_runtime_dependency "sass", "~> 3.4"
 

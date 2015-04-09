@@ -3,6 +3,7 @@ exclude:
 gems:
   - octopress-genesis-theme
   - octopress-debugger
+  - octopress-quote-tag
 url: http://octopress.org/
 
 ink_watch: theme

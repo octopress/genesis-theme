@@ -4,7 +4,14 @@ html {
 
 body {
   font-family: $main-font;
+  font-size: 1.8rem;
   line-height: 1.65em;
+  @include at-least($small) {
+    font-size: 2.1rem;
+  }
+  @include at-least($large) {
+    font-size: 2.4rem;
+  }
 }
 
 h1,h2,h3,h4,h5,h6 {
@@ -13,31 +20,31 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 h1 {
-  font-size: 2.8rem;
+  font-size: 3.5rem;
 }
 
 h2 {
-  font-size: 2em;
+  font-size: 3rem;
 }
 
 h3 {
-  font-size: 1.6em;
+  font-size: 2.8rem;
 }
 
 h4 {
-  font-size: 1.3em;
+  font-size: 2.4rem;
 }
 
 h5 {
-  font-size: 1.2em;
+  font-size: 2rem;
 }
 
 h6 {
-  font-size: 1em;
+  font-size: 1.5rem;
 }
 
 p, ul, ol, dl, table, figure, blockquote {
-  margin: { top: 1.45rem; bottom: 1.45rem; }
+  margin: { top: 1.65em; bottom: 1.65em; }
 }
 
 figure {
@@ -51,10 +58,39 @@ img {
 blockquote {
   border-left: 5px solid $page-border;
   margin-left: 0;
-  padding: 1px .5rem 1px 2rem;
+  margin-right: 0;
+  padding: 1px 1.5em;
   color: $medium-text-color;
   p {
-    margin: .8rem 0;
+    margin: 1em 0;
+  }
+}
+
+figure.quote {
+  border-left: 5px solid $page-border;
+  padding: 0px 1em;
+
+  @include at-least($medium) {
+    padding: 1px 2em;
+  }
+
+  blockquote {
+    border: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .quote-source {
+    margin: 1em 0;
+    &:before {
+      content: " — ";
+    }
+  }
+  .quote-author + .quote-title {
+    &:before {
+      font-style: normal;
+      content: ", ";
+    }
   }
 }
 

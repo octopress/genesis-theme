@@ -12,7 +12,13 @@
 
 .site-title {
   margin: 0;
-  font-size: 1.5rem;
+  font-size: 2.2rem;
+  @include at-least($small) {
+    font-size: 2.5rem;
+  }
+  @include at-least($small) {
+    font-size: 2.8rem;
+  }
 }
 
 .site-title {
@@ -34,7 +40,7 @@
   font-family: $nav-font;
   text-decoration: none;
   color: inherit;
-  padding: 0 .3rem;
+  padding: 0 .3em;
 
   &:last-child {
     padding-right: 0;
@@ -52,31 +58,37 @@ a.main-nav-item {
     cursor: pointer;
     font-family: $nav-font;
     line-height: 1.65em;
-    font-size: .8rem;
+    font-size: 1.3rem;
+    position: relative;
+    z-index: -10;
 
     border: {
       color: transparent;
       width: 1px;
       style: solid;
-      radius: .2rem;
+      radius: .2em;
     }
 
     background: none;
     color: inherit;
-    padding: 0 .5rem;
+    padding: 0 .5em;
     outline: none;
-    width: 5em;
+    width: 0px;
     transition: all .25s ease-in-out;
-    position: relative;
-    top: -1px;
 
     &:focus {
       outline: none;
-      width: 10em;
+      width: 8em;
       border-color: inherit;
+      position: relative;
+      z-index: 0;
+      top: -1px;
+
       @include placeholder {
-        font-size: .8rem;
         opacity: .5;
+      }
+      + label {
+        display: none;
       }
     }
 
@@ -89,12 +101,6 @@ a.main-nav-item {
     }
 
   }
-}
-
-.site-subtitle {
-  margin: .2rem 0;
-  color: $medium-text-color;
-  font-size: .95rem;
 }
 
 @include at-least($small) {
@@ -110,7 +116,7 @@ a.main-nav-item {
   }
   .site-header, .main-nav {
     display: table-cell;
-    padding: .7rem 1.4rem;
+    padding: .7em 1.4em;
   }
   .site-header {
     text-align: left;
@@ -118,10 +124,6 @@ a.main-nav-item {
   .main-nav {
     text-align: right;
     font-size: $main-nav-font-size;
-  }
-  .site-title {
-    margin: 0;
-    font-size: 1.8rem;
   }
 }
 

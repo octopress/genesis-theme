@@ -7,12 +7,13 @@ html, body, .site {
   margin: 0;
 }
 
+.site {
+  transform: translate3d(0,0,0);
+}
+
 .site-content {
   width: 100%;
   min-height: 100%;
-  display: table;
-  table-layout: fixed;
-  transform: translate3d(0,0,0);
 }
 
 .hidden-label {
@@ -21,8 +22,14 @@ html, body, .site {
   display: inline-block;
 }
 
-.site-top, .site-main, .site-bottom {
-  display: table-row;
+@include at-least($small) {
+  .site-content {
+    display: table;
+    table-layout: fixed;
+  }
+  .site-top, .site-main, .site-bottom {
+    display: table-row;
+  }
 }
 
 .site-main {
@@ -41,7 +48,7 @@ html, body, .site {
 }
 
 .main-content {
-  padding-bottom: 3rem;
+  padding-bottom: 3em;
 }
 
 @include at-least($large) {
