@@ -110,6 +110,9 @@
       opacity: .5;
     }
   }
+  .site-search-label {
+    display: none;
+  }
 }
 
 @include at-least($small) {

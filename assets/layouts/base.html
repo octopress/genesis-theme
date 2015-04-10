@@ -6,6 +6,7 @@
 {% yield head %}
 </head>
 <body>
+  {% include theme:inline-svgs.html %}
   <div class="site">{{ content | expand_urls }}</div>
   {% js_asset_tag %}
   {% include theme:social/scripts.html %}

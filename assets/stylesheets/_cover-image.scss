@@ -14,13 +14,4 @@
       opacity: 1;
     }
   }
-  .main-nav-search {
-    opacity: 1;
-    input {
-      opacity: .8;
-      &:hover, &:focus {
-        opacity: 1;
-      }
-    }
-  }
 }

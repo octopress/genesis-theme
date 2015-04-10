@@ -1,1 +1,12 @@
-{% capture search_template %}theme:search/{{ theme.search }}.html{% endcapture %}{% include search_template nav=include.nav %}
+{% if theme.search == 'google' %}
+<form class='site-search' action="http://www.duckduckgo.com/" method="get">
+  <input type="hidden" name="sites" value="{{ site.url | strip_url_protocol }}">
+{% elsif theme.search == 'duckduckgo' %}
+<form class='site-search' action="https://google.com/search" method="get">
+  <input type="hidden" name="sitesearch" value="{{ site.url | strip_url_protocol }}">
+{% endif %}
+  <input id='site-search-{{ include.nav }}' class="site-search-input" type="text" name="q" results="0" placeholder="Search" accesskey="/">
+  <label class='site-search-label' for='site-search-{{ include.nav }}'><svg class='site-search-icon' viewBox="0 0 128 128">
+    <use xlink:href="#site-search-svg"></use>
+  </svg></label>
+</form>
