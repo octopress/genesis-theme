@@ -8,8 +8,12 @@ layout: theme:base
 {% include theme:main_nav.html | compact_newlines %}
 </div></div>
 <div class="site-main">
-<div class="main {% return 'with-sidebar' if sidebar %}">
+<div class="main {% return 'with-sidebar' if page.sidebar %}">
   <div class="main-content">{{ content }}</div>
+  {% if page.sidebar %}
+    {% capture sidebar %}sidebars/{{ page.sidebar }}.html{% endcapture %}
+    {% wrap include sidebar %}<div class="main-sidebar"><div class="main-sidebar-content">{{ yield }}</div></div>{% endwrap %}
+  {% endif %}
 </div>
 </div>
 <div class="site-bottom"><div class="site-bottom-content">

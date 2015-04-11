@@ -59,7 +59,13 @@ html, body, .site {
 
   .main-sidebar {
     width: $main-sidebar-width;
+    border-left: 1px solid $page-border;
   }
+}
+
+.main-sidebar-content {
+  padding-left: $content-pad;
+  padding-right: $content-pad;
 }
 
 @include at-least($max) {
