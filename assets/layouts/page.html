@@ -5,14 +5,18 @@ layout: theme:default
   <header class="entry-header">
     <div class='entry-header-content'>
       <h1 class="entry-title">{{ page.title_html }}</h1>
-      {% wrap return page.date_html %}<div class="entry-meta"><a class='entry-date' href="{% return page.url %}">{{ yield }}</a></div>{% endwrap %}
-      {% wrap include theme:social/sharing.html if theme.sharing and page.sharing == true %}
-      <div class="entry-social top">{{ yield }}</div>
-      {% endwrap %}
     </div>
   </header>
 
+  {% wrap return page.date_html %}<div class="entry-meta"><a class='entry-date' href="{% return page.url %}">{{ yield }}</a></div>{% endwrap %}
+
   <div class="entry-content">{{ content }}</div>
+
+  {% wrap yield footer %}<footer class='entry-footer' role='contentinfo'>
+    {{ yield }}
+  </footer>{% endwrap %}
+
+  {% include theme:social/sharing.html | join_lines %}
 
 </article>
 {% wrap include theme:social/comments.html if theme.comments and page.comments == true %}

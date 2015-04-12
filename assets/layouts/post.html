@@ -15,9 +15,9 @@ layout: theme:default
 
   <div class="entry-content">{{ content }}</div>
 
-  <footer class='entry-footer' role='contentinfo'>
-    {% yield footer %}
-  </footer>
+  {% wrap yield footer %}<footer class='entry-footer' role='contentinfo'>
+    {{ yield }}
+  </footer>{% endwrap %}
 
   {% include theme:social/sharing.html | join_lines %}
 
