@@ -13,7 +13,7 @@
     padding: 0em .5em 0em 1.5em;
     position: relative;
     outline: none;
-    transition: all .25s ease-in-out;
+    transition: all .2s ease-in-out;
     font-size: $main-nav-font-size;
     font-family: $nav-font;
     border: none;
@@ -56,7 +56,7 @@
       left: 0; top: 0; bottom: 0; right: 0;
       background: currentColor;
       opacity: .05;
-      transition: all .25s ease-in-out;
+      transition: all .2s ease-in-out;
       border-radius: 3px;
     }
   }
