@@ -3,11 +3,13 @@ layout: theme:default
 ---
 <article class="page entry {{ page.class }}" role="article">
   <header class="entry-header">
-    <h1 class="entry-title">{{ page.title_html }}</h1>
-    <div class="entry-meta">{{ page.date_html }}</div>
-    {% wrap include theme:social/sharing.html if theme.sharing and page.sharing == true %}
-    <div class="entry-social top">{{ yield }}</div>
-    {% endwrap %}
+    <div class='entry-header-content'>
+      <h1 class="entry-title">{{ page.title_html }}</h1>
+      {% wrap return page.date_html %}<div class="entry-meta"><a class='entry-date' href="{% return page.url %}">{{ yield }}</a></div>{% endwrap %}
+      {% wrap include theme:social/sharing.html if theme.sharing and page.sharing == true %}
+      <div class="entry-social top">{{ yield }}</div>
+      {% endwrap %}
+    </div>
   </header>
 
   <div class="entry-content">{{ content }}</div>

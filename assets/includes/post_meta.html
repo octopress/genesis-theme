@@ -1,5 +1,5 @@
 <div class="entry-meta">
-  <a href="{% return post.url || page.url %}">{% return post.date_html || page.date_html %}</a>
+  <a class='entry-date' href="{% return post.url || page.url %}">{% return post.date_html || page.date_html %}</a>
   {% include theme:category_links.html %}
   {% include theme:tag_links.html %}
 </div>
