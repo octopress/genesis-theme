@@ -1,14 +1,18 @@
 ---
 layout: theme:default
 ---
-<article class="page entry {{ page.class }}" role="article">
+{% assign page_type = (page.tags ? 'post' : 'page') %}
+<article class="entry {{ page_type }} {{ page.class }} {% return 'cover-image' if page.cover_image %} {% return 'linkpost' if page.linkpost %}" role="article">
   <header class="entry-header">
+    {% assign title = (page.linkpost ? page.title_link : page.title_html) %}
     <div class='entry-header-content'>
-      <h1 class="entry-title">{{ page.title_html }}</h1>
+      <h1 class="entry-title">{{ title }}</h1>
+      {% if page.subtitle %}<h2 class="entry-subtitle">{{ page.subtitle }}</h2>{% endif %}
+      {% yield header %}
     </div>
   </header>
 
-  {% wrap return page.date_html %}<div class="entry-meta"><a class='entry-date' href="{% return page.url %}">{{ yield }}</a></div>{% endwrap %}
+  {% include theme:post_meta.html | join_lines %}
 
   <div class="entry-content">{{ content }}</div>
 
@@ -16,9 +20,6 @@ layout: theme:default
     {{ yield }}
   </footer>{% endwrap %}
 
-  {% include theme:social/sharing.html | join_lines %}
-
 </article>
-{% wrap include theme:social/comments.html if theme.comments and page.comments == true %}
-<div class='entry-comments'>{{ yield }}</div>
-{% endwrap %}
+
+{% include theme:social/sharing.html | join_lines %}

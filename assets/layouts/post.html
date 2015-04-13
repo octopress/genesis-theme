@@ -1,27 +1,9 @@
 ---
-layout: theme:default
+layout: theme:page
 ---
-<article class="post entry {% return 'cover-image' if page.cover_image %} {% return 'linkpost' if page.linkpost %}" role="article">
-  <header class="entry-header">
-    {% assign title = (page.linkpost ? page.title_link : page.title_html) %}
-    <div class='entry-header-content'>
-      <h1 class="entry-title">{{ title }}</h1>
-      {% if page.subtitle %}<h2 class="entry-subtitle">{{ page.subtitle }}</h2>{% endif %}
-      {% yield header %}
-    </div>
-  </header>
+{% assign is_post = true %}
+{{ content }}
 
-  {% include theme:post_meta.html | join_lines %}
-
-  <div class="entry-content">{{ content }}</div>
-
-  {% wrap yield footer %}<footer class='entry-footer' role='contentinfo'>
-    {{ yield }}
-  </footer>{% endwrap %}
-
-  {% include theme:social/sharing.html | join_lines %}
-
-</article>
 {% include theme:post_nav.html %}
 {% wrap include theme:social/comments.html if theme.comments and page.comments != false %}
 <div class='entry-comments'>{{ yield }}</div>
