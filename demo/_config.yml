@@ -7,3 +7,6 @@ gems:
 url: http://octopress.org/
 
 ink_watch: theme
+redcarpet:
+  extensions:
+    - footnotes
