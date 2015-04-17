@@ -1,0 +1,76 @@
+.littlefoot-container {
+  position: relative;
+  display: inline-block;
+  font-size: 1em;
+}
+
+.littlefoot-button {
+  border: none;
+  background: $link-color;
+  color: $main-bg;
+  border-radius: .3em;
+  padding: 0 .4em;
+  margin: 0;
+  outline: none;
+  line-height: 1.2em;
+  cursor: pointer;
+  font-size: .6em;
+  vertical-align: middle;
+
+  &:after {
+    .is-open & {
+      content: "";
+    }
+
+    position: absolute;
+    left: .5em;
+    z-index: 1;
+
+  }
+
+  .open-down &:after {
+    @include triangle(up, #fff, .8em);
+    bottom: -.2em;
+  }
+
+  .open-up &:after {
+    @include triangle(down, #fff, .8em);
+    top: -.2em;
+  }
+}
+
+.littlefoot-footnote {
+  position: absolute;
+  z-index: 10;
+
+  .open-down & {
+    top: 1.6em;
+  }
+  .open-up & {
+    bottom: 1.6em;
+  }
+}
+
+.littlefoot-footnote-wrapper {
+  max-height: 250px;
+  overflow: auto;
+  background: #fff;
+  border-radius: .5em;
+}
+.littlefoot-footnote-content {
+  width: 40em;
+  font-size: .7em;
+  line-height: 1.45em;
+  font-family: $meta-font;
+  padding: 0 1em;
+  p {
+    margin: .8em 0;
+  }
+}
+
+.littlefoot-test {
+  @extend .littlefoot-footnote-content;
+  max-width: 400px;
+  width: auto;
+  display: inline-block;
+}
