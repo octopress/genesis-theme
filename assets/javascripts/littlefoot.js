@@ -13,6 +13,17 @@
         document.querySelector('div.footnotes').remove()
       })
 
+      document.addEventListener("click", function(event) {
+        var button = childOf(event.target, '.littlefoot-button')
+        var dismiss = childOf(event.target, '.littlefoot-container.is-open')
+
+        if (button) {
+          LittleFoot.toggle(button)
+        } else if (!dismiss) {
+          LittleFoot.close()
+        }
+      })
+
       window.addEventListener("resize", function(event) { 
         window.clearTimeout(self.timeout)
         self.timeout = window.setTimeout(function(){self.positionFootnote()}, 50)
@@ -20,9 +31,47 @@
 
     },
 
-    toggleFootnote: function (event) {
+    toggle: function(el) {
+      if (this.currentFootnote()){
+        this.close()
+      } else {
+        this.open(el)
+      }
+    },
+
+    open: function (el) {
       self = this
-      el = event.target
+      el.parentNode.classList.add('is-open')
+      var footnote = el.nextElementSibling
+      var size = this.measureFootnote(footnote)
+
+      footnote.classList.remove('is-hidden')
+      this.activeFootnote = el.parentNode
+
+      footnote.querySelector('.littlefoot-footnote-content').setAttribute('style', 'max-width:'+size.w+'px;')
+
+      self.positionFootnote()
+      footnote.classList.add('is-visible')
+    },
+
+    close: function () {
+      var footnote = this.currentFootnote()
+      if (footnote) {
+        this.activeFootnote.classList.remove('is-open')
+        footnote.classList.add('is-hidden')
+        footnote.classList.remove('is-visible')
+        this.activeFootnote = null
+      }
+    },
+
+    currentFootnote: function() {
+      if (this.activeFootnote) {
+        return this.activeFootnote.querySelector('.littlefoot-footnote')
+      }
+    },
+
+    toggleFootnote: function (el) {
+      self = this
       el.parentNode.classList.toggle('is-open')
 
       var footnote = el.nextElementSibling
@@ -35,7 +84,7 @@
       }
 
       footnote.querySelector('.littlefoot-footnote-content').setAttribute('style', 'max-width:'+size.w+'px;')
-      window.setTimeout(function(){self.positionFootnote()}, 10)
+      self.positionFootnote()
       footnote.classList.toggle('is-visible')
     },
     
@@ -46,7 +95,6 @@
 
       var wrapper = sup.nextElementSibling
       wrapper.footnote = this.footnoteContent(anchor)
-      wrapper.querySelector('button').addEventListener('click', this.toggleFootnote.bind(this))
       sup.remove()
     },
 
@@ -68,7 +116,7 @@
     },
 
     button: function (el) {
-      return '<button class="littlefoot-button" title="view footnote #'+el.textContent+'">•••</button>'
+      return '<button class="littlefoot-button" title="view footnote #'+el.textContent+'"><svg class="littlefoot-graphic" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 98"><path class="littlefoot-graphic-path" fill="#fff" d="M200 25c0-13.8-11.2-25-25-25H25C11.2 0 0 11.2 0 25v48c0 13.8 11.2 25 25 25h150c13.8 0 25-11.2 25-25V25zM50.5 64.3c-8.3 0-15-6.7-15-15s6.7-15 15-15 15 6.7 15 15-6.8 15-15 15zm50 0c-8.3 0-15-6.7-15-15s6.7-15 15-15 15 6.7 15 15-6.8 15-15 15zm49 0c-8.3 0-15-6.7-15-15s6.7-15 15-15 15 6.7 15 15-6.8 15-15 15z"/></svg></button>'
     },
     
     footnote: function (el) {
@@ -76,9 +124,10 @@
     },
 
     positionFootnote: function () {
-      if (this.currentFootnote && this.currentFootnote.offsetWidth > 0) {
-        this.setOrientation(this.currentFootnote)
-        this.setPosition(this.currentFootnote)
+      footnote = this.currentFootnote()
+      if (footnote && footnote.offsetWidth > 0) {
+        this.setOrientation(footnote)
+        this.setPosition(footnote)
       }
     },
 
@@ -122,6 +171,26 @@
       }
       context.removeChild(el)
       return size
+    }
+  }
+
+  var childOf = function(start, classname) {
+    var func;
+    var element = start;
+
+    ['matches', 'webkitMatchesSelector', 'mozMatchesSelector', 'msMatchesSelector', 'oMatchesSelector'].some(function(fn) {
+      if (typeof document.body[fn] == 'function') {
+        func = fn;
+        return true;
+      }
+      return false;
+    });
+
+    while (element !== null) {
+      if (element !== null && element[func](classname)) {
+        return element;
+      }
+      element = element.parentElement;
     }
   }
 

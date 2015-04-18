@@ -4,17 +4,33 @@
   font-size: 1em;
 }
 
+.littlefoot-graphic {
+  height: 1em;
+  opacity: .6;
+  transition: opacity .3s ease-in-out;
+  &:hover {
+    opacity: .8;
+  }
+  .is-open & {
+    opacity: 1;
+  }
+}
+
+.littlefoot-graphic-path {
+  fill: $link-color;
+  .is-open & {
+    fill: $link-color;
+  }
+}
+
 .littlefoot-button {
   border: none;
-  background: $link-color;
-  color: $main-bg;
-  border-radius: .3em;
-  padding: 0 .4em;
+  padding: 0;
+  background: none;
   margin: 0;
   outline: none;
-  line-height: 1.2em;
   cursor: pointer;
-  font-size: .6em;
+  font-size: .7em;
   vertical-align: middle;
 
   &:after {
@@ -23,7 +39,7 @@
     }
 
     position: absolute;
-    left: .5em;
+    left: .3em;
     z-index: 1;
 
   }
@@ -42,12 +58,24 @@
 .littlefoot-footnote {
   position: absolute;
   z-index: 10;
+  /*opacity: 0;*/
+  /*transform: scale(.9,.9) translateZ(0);*/
+  transition: {
+    property: opacity, transform;
+    duration: .25s;
+    timing-function: ease-in-out;
+  }
 
   .open-down & {
     top: 1.6em;
   }
   .open-up & {
     bottom: 1.6em;
+  }
+
+  &.is-visible {
+    opacity: 1;
+    transform: scale(1,1);
   }
 }
 
