@@ -33,38 +33,18 @@
   font-size: .7em;
   vertical-align: middle;
 
-  &:after {
-    .is-open & {
-      content: "";
-    }
-
-    position: absolute;
-    left: .3em;
-    z-index: 1;
-
-  }
-
-  .open-down &:after {
-    @include triangle(up, #fff, .8em);
-    bottom: -.2em;
-  }
-
-  .open-up &:after {
-    @include triangle(down, #fff, .8em);
-    top: -.2em;
-  }
 }
 
-.littlefoot-footnote {
+.littlefoot-popover {
   position: absolute;
   z-index: 10;
-  /*opacity: 0;*/
-  /*transform: scale(.9,.9) translateZ(0);*/
   transition: {
     property: opacity, transform;
     duration: .25s;
     timing-function: ease-in-out;
   }
+  opacity: 0;
+  transform: scale(.9,.9) translateZ(0);
 
   .open-down & {
     top: 1.6em;
@@ -76,6 +56,39 @@
   &.is-visible {
     opacity: 1;
     transform: scale(1,1);
+
+  }
+
+  &:before {
+    .is-open & {
+      content: "";
+    }
+
+    position: absolute;
+    left: -2px;
+    z-index: 1;
+  }
+
+  .open-down &:before {
+    @include triangle(up, #fff, .8em);
+    bottom: -.3em;
+  }
+
+  .open-up &:before {
+    @include triangle(down, #fff, .8em);
+    top: -.3em;
+  }
+}
+
+.littlefoot-footnote {
+  position: absolute;
+  z-index: 10;
+  left: -.5em;
+  .open-down & {
+    top: 0;
+  }
+  .open-up & {
+    bottom: 0;
   }
 }
 
