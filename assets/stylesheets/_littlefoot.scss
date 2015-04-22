@@ -2,10 +2,23 @@
   position: relative;
   display: inline-block;
   font-size: 1em;
+  transform: translateZ(0);
+  z-index: 1;
+}
+
+.littlefoot-button {
+  border: none;
+  padding: 0;
+  background: none;
+  margin: 0;
+  outline: none;
+  cursor: pointer;
+  font-size: .7em;
+  vertical-align: middle;
 }
 
 .littlefoot-graphic {
-  height: 1em;
+  height: .9em;
   opacity: .6;
   transition: opacity .3s ease-in-out;
   &:hover {
@@ -23,18 +36,6 @@
   }
 }
 
-.littlefoot-button {
-  border: none;
-  padding: 0;
-  background: none;
-  margin: 0;
-  outline: none;
-  cursor: pointer;
-  font-size: .7em;
-  vertical-align: middle;
-
-}
-
 .littlefoot-popover {
   position: absolute;
   z-index: 10;
@@ -44,7 +45,7 @@
     timing-function: ease-in-out;
   }
   opacity: 0;
-  transform: scale(.9,.9) translateZ(0);
+  transform: scale(.4,.4);
 
   .open-down & {
     top: 1.6em;
@@ -56,7 +57,6 @@
   &.is-visible {
     opacity: 1;
     transform: scale(1,1);
-
   }
 
   &:before {
@@ -65,25 +65,27 @@
     }
 
     position: absolute;
-    left: -2px;
+    left: 4px;
     z-index: 1;
   }
 
   .open-down &:before {
-    @include triangle(up, #fff, .8em);
-    bottom: -.3em;
+    @include triangle(up, #fff, .5em);
+    bottom: -.05em;
   }
 
   .open-up &:before {
-    @include triangle(down, #fff, .8em);
-    top: -.3em;
+    @include triangle(down, #fff, .5em);
+    top: -.05em;
   }
 }
 
 .littlefoot-footnote {
   position: absolute;
-  z-index: 10;
   left: -.5em;
+  box-shadow: rgba(#000, .2) 0 3px 8px;
+  border-radius: .5em;
+
   .open-down & {
     top: 0;
   }
@@ -103,9 +105,9 @@
   font-size: .7em;
   line-height: 1.45em;
   font-family: $meta-font;
-  padding: 0 1em;
+  padding: 0 1.4em;
   p {
-    margin: .8em 0;
+    margin: 1em 0;
   }
 }
 
@@ -114,4 +116,5 @@
   max-width: 400px;
   width: auto;
   display: inline-block;
+  padding: 0 1.4em;
 }
