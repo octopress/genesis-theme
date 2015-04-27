@@ -11,6 +11,7 @@ require 'octopress-content-for'
 require 'octopress-filter-tag'
 require 'octopress-paginate'
 require 'octopress-social'
+require 'octopress-littlefoot'
 
 require 'octopress-genesis-theme/version'
 

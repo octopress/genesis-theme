@@ -28,6 +28,7 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency "octopress-comment-tag"
   spec.add_runtime_dependency "octopress-quote-tag"
   spec.add_runtime_dependency "octopress-social"
+  spec.add_runtime_dependency "octopress-littlefoot"
   spec.add_runtime_dependency "sass", "~> 3.4"
 
   spec.add_development_dependency "bundler", "~> 1.6"
