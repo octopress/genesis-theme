@@ -24,3 +24,4 @@ _site
 .sass-cache
 .DS_Store
 .ink-cache
+.code-highlighter-cache

@@ -1,0 +1,23 @@
+---
+layout: theme:default
+---
+{% assign page_type = (page.tags ? 'post' : 'page') %}
+<article class="entry {{ page_type }} {{ page.class }} {% return 'cover-image' if page.cover_image %} {% return 'linkpost' if page.linkpost %}" role="article">
+  <header class="entry-header">
+    {% assign title = (page.linkpost ? page.title_link : page.title_html) %}
+    <div class='entry-header-content'>
+      <h1 class="entry-title">{{ title }}</h1>
+      {% if page.subtitle %}<h2 class="entry-subtitle">{{ page.subtitle }}</h2>{% endif %}
+      {% yield header %}
+    </div>
+  </header>
+
+  {% include theme:post_meta.html | join_lines %}
+
+  <div class="entry-content">{{ content }}</div>
+
+  {% wrap yield footer %}<footer class='entry-footer' role='contentinfo'>
+    {{ yield }}
+  </footer>{% endwrap %}
+
+</article>

@@ -17,7 +17,7 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
 
-  spec.add_runtime_dependency "octopress-ink"
+  spec.add_runtime_dependency "octopress-ink", "~> 1.0"
   spec.add_runtime_dependency "octopress-linkblog"
   spec.add_runtime_dependency "octopress-date-format"
   spec.add_runtime_dependency "octopress-paginate"

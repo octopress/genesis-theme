@@ -7,6 +7,9 @@
 
 <article class="entry {% return 'excerpted' if excerpted %}" role="article">
   <header class="entry-header">
+    {% if post.cover_image %}
+    <img src='{{ post.cover_image }}'>
+    {% endif %}
     <h2 class="entry-title">{{ post.title_link }}</h2>
     {% if post.subtitle %}<h2 class="entry-subtitle">{{ post.subtitle }}</h2>{% endif %}
     <div class="entry-meta"><a href="{{ post.url | expand_url }}">{{ post.date_html }}</a></div>

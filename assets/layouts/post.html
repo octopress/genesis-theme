@@ -1,10 +1,13 @@
 ---
-layout: theme:page
+layout: theme:article
 ---
 {% assign is_post = true %}
 {{ content }}
 
+{% include theme:social/sharing.html | join_lines %}
+
 {% include theme:post_nav.html %}
+
 {% wrap include theme:social/comments.html if theme.comments and page.comments != false %}
 <div class='entry-comments'>{{ yield }}</div>
 {% endwrap %}
