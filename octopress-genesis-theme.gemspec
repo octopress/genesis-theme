@@ -9,7 +9,6 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Brandon Mathis"]
   spec.email         = ["brandon@imathis.com"]
   spec.summary       = %q{A Jekyll theme built on Octopress Ink}
-  spec.description   = %q{A Jekyll theme built on Octopress Ink}
   spec.homepage      = ""
   spec.license       = "MIT"
 
@@ -30,6 +29,7 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency "octopress-social"
   spec.add_runtime_dependency "octopress-littlefoot"
   spec.add_runtime_dependency "sass", "~> 3.4"
+  spec.add_runtime_dependency "jekyll", ">= 2.0"
 
   spec.add_development_dependency "bundler", "~> 1.6"
   spec.add_development_dependency "rake"
