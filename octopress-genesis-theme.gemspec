@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Brandon Mathis"]
   spec.email         = ["brandon@imathis.com"]
   spec.summary       = %q{A Jekyll theme built on Octopress Ink}
-  spec.homepage      = ""
+  spec.homepage      = "https://github.com/octopress/genesis-theme"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0").grep /(lib|assets|README\.md|CHANGELOG\.md)/
