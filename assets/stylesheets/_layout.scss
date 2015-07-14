@@ -1,6 +1,6 @@
 * { box-sizing: border-box; }
 
-html, body, .site {
+html, body {
   height: 100%;
   width: 100%;
   padding: 0;
@@ -9,11 +9,18 @@ html, body, .site {
 
 .site {
   transform: translate3d(0,0,0);
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: no-wrap;
+  justify-content: flex-start;
+  align-content: stretch;
+  align-items: stretch;
 }
 
-.site-content {
-  width: 100%;
+.site-top {
   min-height: 100%;
+  flex-shrink: 1;
 }
 
 .hidden-label {
@@ -22,29 +29,26 @@ html, body, .site {
   display: inline-block;
 }
 
-@include at-least($small) {
-  .site-content {
-    display: table;
-    table-layout: fixed;
-  }
-  .site-top, .site-main, .site-bottom {
-    display: table-row;
-  }
+.site-top, .site-bottom {
+  flex-shrink: 1;
 }
 
 .site-main {
-  height: 100%;
+  flex-grow: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: stretch;
+  align-items: stretch;
 }
+
 
 .main {
   transition: transform .2s ease-out;
   position: relative;
   z-index: 1;
-  height: 100%;
-  display: table;
-  table-layout: fixed;
-  width: 100%;
-  float: right;
 }
 
 .main-content {
@@ -53,8 +57,7 @@ html, body, .site {
 
 @include at-least($large) {
   .main-content, .main-sidebar {
-    display: table-cell;
-    vertical-align: top;
+    // show as columns
   }
 
   .main-sidebar {
