@@ -1,8 +1,7 @@
 <!DOCTYPE html>
-<html class="{{ page.class }} {% return 'cover-image' if page.cover_image %}" lang="{% return page.lang || site.lang || 'en' %}" >
+<html class="{{ page.class }}" lang="{% return page.lang || site.lang || 'en' %}" >
 <head>
 {% include theme:head.html | expand_urls %}
-{% include theme:cover_image.html if page.cover_image %}
 {% yield head %}
 </head>
 <body>

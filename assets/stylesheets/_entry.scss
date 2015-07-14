@@ -6,7 +6,6 @@
     &:before {
       content: "";
       display: block;
-      max-width: $main-content-max - ($content-pad * 2);
       border-top: 1px solid $page-border;
       margin: 0 auto;
       position: relative;

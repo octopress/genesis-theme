@@ -8,7 +8,11 @@ html, body {
 }
 
 .site {
+  height: 100%;
   transform: translate3d(0,0,0);
+}
+
+.site-content {
   min-height: 100%;
   display: flex;
   flex-direction: column;
@@ -36,6 +40,8 @@ html, body {
 .site-main {
   flex-grow: 1;
   width: 100%;
+  max-width: $main-content-max - ($content-pad * 2);
+  margin: 0 auto;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;

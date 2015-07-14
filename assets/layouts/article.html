@@ -2,7 +2,7 @@
 layout: theme:default
 ---
 {% assign page_type = (page.tags ? 'post' : 'page') %}
-<article class="entry {{ page_type }} {{ page.class }} {% return 'cover-image' if page.cover_image %} {% return 'linkpost' if page.linkpost %}" role="article">
+<article class="entry {{ page_type }} {{ page.class }} {% return 'linkpost' if page.linkpost %}" role="article">
   <header class="entry-header">
     {% assign title = (page.linkpost ? page.title_link : page.title_html) %}
     <div class='entry-header-content'>
