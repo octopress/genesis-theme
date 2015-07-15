@@ -84,15 +84,13 @@ html, body {
   }
 }
 
-.limit-width,
-.entry-title,
-.entry-subtitle,
-.entry-content, 
-.entry-meta,
-.post-nav,
-.entry-footer {
+.main-content {
   max-width: $main-content-max;
-  padding-left: $content-pad;
-  padding-right: $content-pad;
   margin: { left: auto; right: auto; }
+  padding-left: $content-pad-small;
+  padding-right: $content-pad-small;
+  @include at-least($small) {
+    padding-left: $content-pad;
+    padding-right: $content-pad;
+  }
 }

@@ -1,5 +1,5 @@
 .entry {
-  margin: { top: 4em; bottom: 4em; }
+  margin: { top: 2em; bottom: 2em; }
   margin: { left: auto; right: auto; }
   + .entry {
     padding-top: 2em;
@@ -22,14 +22,38 @@
   }
 }
 
-.entry-header {
-  @if ($center-headings) {
+@if ($center-headings) {
+  .entry-header, .entry-meta {
     text-align: center;
   }
 }
 
 .entry-title {
   margin-bottom: 0;
+  font-family: $title-font;
+  font-size: 4rem;
+
+  @include at-least($small) {
+    font-size: 5rem;
+  }
+
+  @include at-least($medium) {
+    font-size: 5.5rem;
+  }
+}
+
+.entry-subtitle {
+  font-family: $subtitle-font;
+  margin-top: 0;
+  font-size: 2rem;
+
+  @include at-least($small) {
+    font-size: 2.2rem;
+  }
+
+  @include at-least($medium) {
+    font-size: 2.4rem;
+  }
 }
 
 .entry-meta {
@@ -43,72 +67,30 @@
 .entry-meta, .entry-subtitle, .entry-footer {
   font-family: $meta-font;
   font-weight: 400;
+}
+
+.entry-meta, .entry-footer {
   font-size: 1.6rem;
+  @include at-least($small) {
+    font-size: 1.8rem;
+  }
 }
 
 .entry-header > * {
   position: relative;
   z-index: 1;
 }
-.entry-subtitle {
-  font-family: $subtitle-font;
-  font-size: 2rem;
-  margin-top: 0;
+
+.entry-header {
+  border-bottom: 1px solid $page-border;
 }
 
-.cover-image {
-  .entry {
-    margin-top: 0;
-  }
-  .entry-header {
-    background-repeat: no-repeat;
-    height: 100vh;
-    max-height: 1000px;
-    overflow: visible;
-	background-attachment: scroll;
-    background-size: cover;
-    background-position: center center;
-    text-shadow: rgba(#000, .5) 0 1px 1px;
-    position: relative;
-    display: table;
-    width: 100%;
-    
-    // Darken image a bit
-    &:after {
-      content: "";
-      position: absolute;
-      z-index: 0;
-      left: 0;
-      top: 0;
-      bottom: 0;
-      right: 0;
-      background: rgba(#222,0.3);
-    }
-  }
-
-  .entry-header-content {
-    display: table-cell;
-    padding: 10% 0;
-    vertical-align: middle;
-  }
-
-  .entry-title {
-    font-family: $title-font;
-    font-size: 4.5rem;
-
-    @include at-least($small) {
-      font-size: 5.5rem;
-    }
-
-    @include at-least($medium) {
-      font-size: 6.5rem;
-    }
-  }
+.entry-header-content {
+  margin: 4rem 0;
 }
 
 .entry-meta {
   display: block;
-  text-align: center;
   .entry-header + & {
     margin: 2em auto;
   }

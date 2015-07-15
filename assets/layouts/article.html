@@ -9,10 +9,10 @@ layout: theme:default
       <h1 class="entry-title">{{ title }}</h1>
       {% if page.subtitle %}<h2 class="entry-subtitle">{{ page.subtitle }}</h2>{% endif %}
       {% yield header %}
+
+      {% include theme:post_meta.html | join_lines %}
     </div>
   </header>
-
-  {% include theme:post_meta.html | join_lines %}
 
   <div class="entry-content">{{ content }}</div>
 

@@ -30,4 +30,4 @@ share_with: links # or buttons
 comments: false
 
 # Center the text in post and page headings.
-center_headings: true
+center_headings: false
