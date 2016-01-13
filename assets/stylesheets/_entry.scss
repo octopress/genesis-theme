@@ -29,6 +29,12 @@
   }
 }
 
+.entry-meta {
+  @if ($center-headings) {
+    text-align: center;
+  }
+}
+
 .entry-title {
   margin-bottom: 0;
 }
@@ -109,7 +115,6 @@
 
 .entry-meta {
   display: block;
-  text-align: center;
   .entry-header + & {
     margin: 2em auto;
   }
